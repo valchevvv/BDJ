@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BDJ")]
+[assembly: AssemblyTitle("BDJ_System")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BDJ")]
+[assembly: AssemblyProduct("BDJ_System")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("242316f2-c049-408d-863c-6cecda19668f")]
+[assembly: Guid("4cb1b6b7-e658-40dc-b4b9-2065618d560e")]
 
 // Version information for an assembly consists of the following four values:
 //

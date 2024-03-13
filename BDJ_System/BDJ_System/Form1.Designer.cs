@@ -1,4 +1,5 @@
-﻿namespace BDJ
+﻿
+namespace BDJ_System
 {
     partial class Form1
     {
