@@ -31,6 +31,18 @@ namespace BDJ_System
             this.Close();
         }
 
+        private BDJ getContext()
+        {
+            return new BDJ();
+        }
+
+        private User login(string username, string password)
+        {
+            int index = getContext().Users.ToList().FindIndex(x => x.username == username && x.password == password);
+
+            return index != -1 ? getContext().Users.ToList().Find(x => x.username == username && x.password == password) : null;
+        }
+
         bool show_pass = false;
 
         private void show_close_pass_Click(object sender, EventArgs e)
@@ -52,6 +64,21 @@ namespace BDJ_System
                 MessageDialog.Show("Потребителското име не може да бъде празно !", "Грешка");
                 return;
             }
+
+            User user = login(usernameBox.Text, passwordBox.Text);
+
+            if(user != null)
+            {
+                Form2 form2 = new Form2();
+                form2.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
+                form2.Show();
+                this.Hide();
+                MessageDialog.Show($"Добре дошли отново {user.username}");
+            }
+            else
+            {
+                MessageDialog.Show("Грешно потребителско име или парола !", "Грешка");
+            }
         }
 
         private void header_panel_MouseMove(object sender, MouseEventArgs e)
@@ -61,6 +88,11 @@ namespace BDJ_System
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

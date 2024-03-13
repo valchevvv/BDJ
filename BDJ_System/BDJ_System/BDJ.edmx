@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDJM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="Reservations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="passenger" Type="int" />
+          <Property Name="route" Type="int" />
+          <Property Name="board" Type="int" />
+          <Property Name="arrive" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Route_Stops">
+          <Property Name="route" Type="int" />
+          <Property Name="city" Type="int" />
+          <Property Name="number" Type="int" />
+          <Property Name="arrival" Type="datetime" />
+        </EntityType>-->
+        <EntityType Name="Routes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="train" Type="int" />
+          <Property Name="start_date" Type="datetime" />
+          <Property Name="end_date" Type="datetime" />
+          <Property Name="normal_price" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="first_class" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="sleeper_class" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Trains">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="places" Type="int" />
+          <Property Name="type" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="40" />
+          <Property Name="password" Type="text" />
+          <Property Name="isAdmin" Type="bit" />
+        </EntityType>
+        <Association Name="FK__Reservati__arriv__47DBAE45">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="arrive" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservati__board__46E78A0C">
+          <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="board" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservati__passe__44FF419A">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="passenger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservati__route__45F365D3">
+          <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Routes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="route" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <!--Errors Found During Generation:
+error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Route_Sto__route__3E52440B" />-->
+        <!--Errors Found During Generation:
+error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship, but cannot be found.
+        <Association Name="FK__Route_Stop__city__3F466844" />-->
+        <Association Name="FK__Routes__train__3A81B327">
+          <End Role="Trains" Type="Self.Trains" Multiplicity="0..1" />
+          <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trains">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Routes">
+              <PropertyRef Name="train" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDJMStoreContainer">
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reservations" EntityType="Self.Reservations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trains" EntityType="Self.Trains" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Reservati__arriv__47DBAE45" Association="Self.FK__Reservati__arriv__47DBAE45">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservati__board__46E78A0C" Association="Self.FK__Reservati__board__46E78A0C">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservati__passe__44FF419A" Association="Self.FK__Reservati__passe__44FF419A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservati__route__45F365D3" Association="Self.FK__Reservati__route__45F365D3">
+            <End Role="Routes" EntitySet="Routes" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Routes__train__3A81B327" Association="Self.FK__Routes__train__3A81B327">
+            <End Role="Trains" EntitySet="Trains" />
+            <End Role="Routes" EntitySet="Routes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDJM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__arriv__47DBAE45" FromRole="Cities" ToRole="Reservations" />
+          <NavigationProperty Name="Reservations1" Relationship="Self.FK__Reservati__board__46E78A0C" FromRole="Cities" ToRole="Reservations" />
+        </EntityType>
+        <EntityType Name="Reservation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="passenger" Type="Int32" />
+          <Property Name="route" Type="Int32" />
+          <Property Name="board" Type="Int32" />
+          <Property Name="arrive" Type="Int32" />
+          <NavigationProperty Name="City" Relationship="Self.FK__Reservati__arriv__47DBAE45" FromRole="Reservations" ToRole="Cities" />
+          <NavigationProperty Name="City1" Relationship="Self.FK__Reservati__board__46E78A0C" FromRole="Reservations" ToRole="Cities" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Reservati__passe__44FF419A" FromRole="Reservations" ToRole="Users" />
+          <NavigationProperty Name="Route1" Relationship="Self.FK__Reservati__route__45F365D3" FromRole="Reservations" ToRole="Routes" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="train" Type="Int32" />
+          <Property Name="start_date" Type="DateTime" Precision="3" />
+          <Property Name="end_date" Type="DateTime" Precision="3" />
+          <Property Name="normal_price" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="first_class" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="sleeper_class" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__route__45F365D3" FromRole="Routes" ToRole="Reservations" />
+          <NavigationProperty Name="Train1" Relationship="Self.FK__Routes__train__3A81B327" FromRole="Routes" ToRole="Trains" />
+        </EntityType>
+        <EntityType Name="Train">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="places" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Routes" Relationship="Self.FK__Routes__train__3A81B327" FromRole="Trains" ToRole="Routes" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isAdmin" Type="Boolean" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__passe__44FF419A" FromRole="Users" ToRole="Reservations" />
+        </EntityType>
+        <Association Name="FK__Reservati__arriv__47DBAE45">
+          <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="arrive" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservati__board__46E78A0C">
+          <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cities">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="board" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservati__passe__44FF419A">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="passenger" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reservati__route__45F365D3">
+          <End Role="Routes" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Routes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Reservations">
+              <PropertyRef Name="route" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Routes__train__3A81B327">
+          <End Role="Trains" Type="Self.Train" Multiplicity="0..1" />
+          <End Role="Routes" Type="Self.Route" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trains">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Routes">
+              <PropertyRef Name="train" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BDJ" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="Self.City" />
+          <EntitySet Name="Reservations" EntityType="Self.Reservation" />
+          <EntitySet Name="Routes" EntityType="Self.Route" />
+          <EntitySet Name="Trains" EntityType="Self.Train" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__Reservati__arriv__47DBAE45" Association="Self.FK__Reservati__arriv__47DBAE45">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservati__board__46E78A0C" Association="Self.FK__Reservati__board__46E78A0C">
+            <End Role="Cities" EntitySet="Cities" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservati__passe__44FF419A" Association="Self.FK__Reservati__passe__44FF419A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reservati__route__45F365D3" Association="Self.FK__Reservati__route__45F365D3">
+            <End Role="Routes" EntitySet="Routes" />
+            <End Role="Reservations" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Routes__train__3A81B327" Association="Self.FK__Routes__train__3A81B327">
+            <End Role="Trains" EntitySet="Trains" />
+            <End Role="Routes" EntitySet="Routes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDJMStoreContainer" CdmEntityContainer="BDJ">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="BDJM.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reservations">
+            <EntityTypeMapping TypeName="BDJM.Reservation">
+              <MappingFragment StoreEntitySet="Reservations">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="passenger" ColumnName="passenger" />
+                <ScalarProperty Name="route" ColumnName="route" />
+                <ScalarProperty Name="board" ColumnName="board" />
+                <ScalarProperty Name="arrive" ColumnName="arrive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Routes">
+            <EntityTypeMapping TypeName="BDJM.Route">
+              <MappingFragment StoreEntitySet="Routes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="train" ColumnName="train" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="normal_price" ColumnName="normal_price" />
+                <ScalarProperty Name="first_class" ColumnName="first_class" />
+                <ScalarProperty Name="sleeper_class" ColumnName="sleeper_class" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trains">
+            <EntityTypeMapping TypeName="BDJM.Train">
+              <MappingFragment StoreEntitySet="Trains">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="places" ColumnName="places" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BDJM.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

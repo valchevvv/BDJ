@@ -32,12 +32,12 @@ namespace BDJ_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.header_panel = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.usernameBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.passwordBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.login_button = new Guna.UI2.WinForms.Guna2Button();
             this.show_close_pass = new Guna.UI2.WinForms.Guna2Button();
             this.MessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             this.header_panel.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace BDJ_System
             // 
             // header_panel
             // 
-            this.header_panel.Controls.Add(this.guna2HtmlLabel1);
+            this.header_panel.Controls.Add(this.label1);
             this.header_panel.Controls.Add(this.close_btn);
             this.header_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.header_panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -66,22 +66,11 @@ namespace BDJ_System
             this.header_panel.TabIndex = 2;
             this.header_panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.header_panel_MouseMove);
             // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(12, 14);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(52, 27);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "Вход";
-            // 
             // usernameBox
             // 
             this.usernameBox.BorderRadius = 12;
             this.usernameBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.usernameBox.DefaultText = "";
+            this.usernameBox.DefaultText = "Admin";
             this.usernameBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.usernameBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.usernameBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -104,7 +93,7 @@ namespace BDJ_System
             // 
             this.passwordBox.BorderRadius = 12;
             this.passwordBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.passwordBox.DefaultText = "";
+            this.passwordBox.DefaultText = "admin_pass";
             this.passwordBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.passwordBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.passwordBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -164,6 +153,18 @@ namespace BDJ_System
             this.MessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.MessageDialog.Text = null;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(19, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Вход";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -178,6 +179,7 @@ namespace BDJ_System
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
             this.header_panel.ResumeLayout(false);
             this.header_panel.PerformLayout();
@@ -188,12 +190,12 @@ namespace BDJ_System
         #endregion
         private System.Windows.Forms.PictureBox close_btn;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel header_panel;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2TextBox usernameBox;
         private Guna.UI2.WinForms.Guna2TextBox passwordBox;
         private Guna.UI2.WinForms.Guna2Button login_button;
         private Guna.UI2.WinForms.Guna2Button show_close_pass;
         private Guna.UI2.WinForms.Guna2MessageDialog MessageDialog;
+        private System.Windows.Forms.Label label1;
     }
 }
 
