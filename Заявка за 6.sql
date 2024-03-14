@@ -32,10 +32,14 @@ arrival datetime
 
 create table Users(
 id int primary key IDENTITY,
+name nvarchar(100),
 username nvarchar(40),
 password text,
 isAdmin bit default 0
 )
+
+insert into Users (name, username, password, isAdmin) values 
+('Admin Admin', 'Admin', 'admin_pass', 1);
 
 create table Reservations(
 id int primary key IDENTITY,
@@ -44,11 +48,6 @@ route int foreign key references Routes(id),
 board int foreign key references Cities(id),
 arrive int foreign key references Cities(id)
 )
-
-
-
-
-
 
 
 

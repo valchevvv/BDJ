@@ -38,9 +38,11 @@ namespace BDJ_System
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.close_btn = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.close_btn = new System.Windows.Forms.PictureBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabs.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             this.SuspendLayout();
@@ -54,16 +56,18 @@ namespace BDJ_System
             // tabs
             // 
             this.tabs.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
             this.tabs.Controls.Add(this.tabPage3);
             this.tabs.Controls.Add(this.tabPage4);
-            this.tabs.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabs.ItemSize = new System.Drawing.Size(160, 40);
+            this.tabs.ItemSize = new System.Drawing.Size(180, 40);
             this.tabs.Location = new System.Drawing.Point(0, 50);
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(800, 400);
+            this.tabs.Size = new System.Drawing.Size(982, 518);
             this.tabs.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.tabs.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.tabs.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -79,7 +83,7 @@ namespace BDJ_System
             this.tabs.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.tabs.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
             this.tabs.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(88)))), ((int)(((byte)(185)))));
-            this.tabs.TabButtonSize = new System.Drawing.Size(160, 40);
+            this.tabs.TabButtonSize = new System.Drawing.Size(180, 40);
             this.tabs.TabButtonTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tabs.TabButtonTextOffset = new System.Drawing.Point(10, 0);
             this.tabs.TabIndex = 0;
@@ -87,64 +91,55 @@ namespace BDJ_System
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(164, 4);
+            this.tabPage1.Controls.Add(this.guna2ComboBox1);
+            this.tabPage1.Location = new System.Drawing.Point(184, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(632, 392);
+            this.tabPage1.Size = new System.Drawing.Size(794, 510);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Потребители";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(144, 4);
+            this.tabPage2.Location = new System.Drawing.Point(164, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(652, 442);
+            this.tabPage2.Size = new System.Drawing.Size(632, 392);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Маршрути";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(144, 4);
+            this.tabPage3.Location = new System.Drawing.Point(164, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(652, 442);
+            this.tabPage3.Size = new System.Drawing.Size(632, 392);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Влакове";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(144, 4);
+            this.tabPage4.Location = new System.Drawing.Point(164, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(652, 442);
+            this.tabPage4.Size = new System.Drawing.Size(632, 392);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Спирки";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.close_btn);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(800, 50);
+            this.guna2Panel1.Size = new System.Drawing.Size(982, 50);
             this.guna2Panel1.TabIndex = 1;
-            // 
-            // close_btn
-            // 
-            this.close_btn.BackColor = System.Drawing.Color.Transparent;
-            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(751, 5);
-            this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(40, 40);
-            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.close_btn.TabIndex = 2;
-            this.close_btn.TabStop = false;
-            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
+            this.guna2Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseMove);
             // 
             // label1
             // 
@@ -157,17 +152,48 @@ namespace BDJ_System
             this.label1.TabIndex = 4;
             this.label1.Text = "Български Държавни Железници";
             // 
+            // close_btn
+            // 
+            this.close_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.close_btn.BackColor = System.Drawing.Color.Transparent;
+            this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
+            this.close_btn.Location = new System.Drawing.Point(933, 5);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(40, 40);
+            this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.close_btn.TabIndex = 2;
+            this.close_btn.TabStop = false;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2ComboBox1.BorderRadius = 12;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(6, 6);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(219, 36);
+            this.guna2ComboBox1.TabIndex = 0;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 568);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
             this.tabs.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
@@ -186,5 +212,6 @@ namespace BDJ_System
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.PictureBox close_btn;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
     }
 }
