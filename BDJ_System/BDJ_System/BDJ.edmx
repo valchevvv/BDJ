@@ -55,6 +55,7 @@ warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary 
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
           <Property Name="username" Type="nvarchar" MaxLength="40" />
           <Property Name="password" Type="text" />
           <Property Name="isAdmin" Type="bit" />
@@ -208,6 +209,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="username" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="isAdmin" Type="Boolean" />
@@ -351,6 +353,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             <EntityTypeMapping TypeName="BDJM.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />

@@ -42,7 +42,7 @@ namespace BDJ_System
 
         private void loadUsers()
         {
-
+            Database.GetUsers().ForEach(x => usersComboBox.Items.Add($"{x.id}) {x.name}"));
         }
 
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
