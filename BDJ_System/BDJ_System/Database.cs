@@ -18,6 +18,31 @@ namespace BDJ_System
             return getContext().Users.ToList();
         }
 
+        public static void AddUser(User user)
+        {
+            BDJ bdj = getContext();
+            bdj.Users.Add(user);
+            bdj.SaveChanges();
+        }
+
+        public static void DeleteUser(User user)
+        {
+            BDJ bdj = getContext();
+            bdj.Users.Remove(user);
+            bdj.SaveChanges();
+        }
+
+        public static void EditUser(int id, string uname, string name, string pass, bool isAdmin)
+        {
+            BDJ bdj = getContext();
+            User user = bdj.Users.ToList().Find(x => x.id == id);
+            user.username = uname;
+            user.name = name;
+            user.password = pass;
+            user.isAdmin = isAdmin;
+            bdj.SaveChanges();
+        }
+
         public static User GetUserById(int id)
         {
             return GetUsers().Find(x => x.id == id);
