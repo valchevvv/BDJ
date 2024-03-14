@@ -39,5 +39,15 @@ namespace BDJ_System
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        private void loadUsers()
+        {
+
+        }
+
+        private void tabs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabs.SelectedTab.Name == "users") loadUsers();
+        }
     }
 }
