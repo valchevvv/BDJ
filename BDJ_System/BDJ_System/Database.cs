@@ -57,5 +57,10 @@ namespace BDJ_System
         {
             return getContext().Reservations.ToList();
         }
+
+        public static List<Route> GetRoutes()
+        {
+            return getContext().Routes.ToList();
+        }
     }
 }

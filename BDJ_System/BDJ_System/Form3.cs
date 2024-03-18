@@ -40,14 +40,19 @@ namespace BDJ_System
             }
         }
 
-        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void loadRoutes()
         {
+            routeComboBox.Items.Clear();
 
+
+
+            Database.GetRoutes().ForEach(x => routeComboBox.Items.Add($"{x.id}) "));
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            var reservations = Database.GetReservations();
+            Route route = Database.GetRoutes().Find(x=>x.id == 1);
+
         }
     }
 }
