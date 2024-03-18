@@ -34,20 +34,25 @@ namespace BDJ_System
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.tabs = new Guna.UI2.WinForms.Guna2TabControl();
             this.users = new System.Windows.Forms.TabPage();
+            this.users_edit = new Guna.UI2.WinForms.Guna2Button();
+            this.users_remove = new Guna.UI2.WinForms.Guna2Button();
+            this.users_add = new Guna.UI2.WinForms.Guna2Button();
+            this.users_isadmin = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.users_pass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.users_name = new Guna.UI2.WinForms.Guna2TextBox();
+            this.users_uname = new Guna.UI2.WinForms.Guna2TextBox();
+            this.usersComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.routes = new System.Windows.Forms.TabPage();
             this.trains = new System.Windows.Forms.TabPage();
             this.stops = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
-            this.usersComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.users_uname = new Guna.UI2.WinForms.Guna2TextBox();
-            this.users_name = new Guna.UI2.WinForms.Guna2TextBox();
-            this.users_pass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.users_isadmin = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.users_add = new Guna.UI2.WinForms.Guna2Button();
-            this.users_remove = new Guna.UI2.WinForms.Guna2Button();
-            this.users_edit = new Guna.UI2.WinForms.Guna2Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabs.SuspendLayout();
             this.users.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -99,6 +104,11 @@ namespace BDJ_System
             // 
             // users
             // 
+            this.users.Controls.Add(this.label6);
+            this.users.Controls.Add(this.label5);
+            this.users.Controls.Add(this.label4);
+            this.users.Controls.Add(this.label3);
+            this.users.Controls.Add(this.label2);
             this.users.Controls.Add(this.users_edit);
             this.users.Controls.Add(this.users_remove);
             this.users.Controls.Add(this.users_add);
@@ -114,6 +124,168 @@ namespace BDJ_System
             this.users.TabIndex = 0;
             this.users.Text = "Потребители";
             this.users.UseVisualStyleBackColor = true;
+            // 
+            // users_edit
+            // 
+            this.users_edit.BorderRadius = 12;
+            this.users_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.users_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.users_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.users_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.users_edit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users_edit.ForeColor = System.Drawing.Color.White;
+            this.users_edit.Location = new System.Drawing.Point(214, 383);
+            this.users_edit.Name = "users_edit";
+            this.users_edit.Size = new System.Drawing.Size(98, 45);
+            this.users_edit.TabIndex = 7;
+            this.users_edit.Text = "Edit";
+            this.users_edit.Click += new System.EventHandler(this.users_edit_Click);
+            // 
+            // users_remove
+            // 
+            this.users_remove.BorderRadius = 12;
+            this.users_remove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.users_remove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.users_remove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.users_remove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.users_remove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users_remove.ForeColor = System.Drawing.Color.White;
+            this.users_remove.Location = new System.Drawing.Point(110, 383);
+            this.users_remove.Name = "users_remove";
+            this.users_remove.Size = new System.Drawing.Size(98, 45);
+            this.users_remove.TabIndex = 6;
+            this.users_remove.Text = "Remove";
+            this.users_remove.Click += new System.EventHandler(this.users_remove_Click);
+            // 
+            // users_add
+            // 
+            this.users_add.BorderRadius = 12;
+            this.users_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.users_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.users_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.users_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.users_add.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users_add.ForeColor = System.Drawing.Color.White;
+            this.users_add.Location = new System.Drawing.Point(6, 383);
+            this.users_add.Name = "users_add";
+            this.users_add.Size = new System.Drawing.Size(98, 45);
+            this.users_add.TabIndex = 5;
+            this.users_add.Text = "Add";
+            this.users_add.Click += new System.EventHandler(this.users_add_Click);
+            // 
+            // users_isadmin
+            // 
+            this.users_isadmin.BackColor = System.Drawing.Color.Transparent;
+            this.users_isadmin.BorderColor = System.Drawing.Color.DarkGray;
+            this.users_isadmin.BorderRadius = 12;
+            this.users_isadmin.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.users_isadmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.users_isadmin.Enabled = false;
+            this.users_isadmin.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_isadmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_isadmin.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.users_isadmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.users_isadmin.ItemHeight = 30;
+            this.users_isadmin.Items.AddRange(new object[] {
+            "Да",
+            "Не"});
+            this.users_isadmin.Location = new System.Drawing.Point(6, 332);
+            this.users_isadmin.Name = "users_isadmin";
+            this.users_isadmin.Size = new System.Drawing.Size(306, 36);
+            this.users_isadmin.TabIndex = 4;
+            // 
+            // users_pass
+            // 
+            this.users_pass.BorderColor = System.Drawing.Color.DimGray;
+            this.users_pass.BorderRadius = 12;
+            this.users_pass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.users_pass.DefaultText = "";
+            this.users_pass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.users_pass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.users_pass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.users_pass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.users_pass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_pass.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users_pass.ForeColor = System.Drawing.Color.Black;
+            this.users_pass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_pass.Location = new System.Drawing.Point(6, 256);
+            this.users_pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.users_pass.Name = "users_pass";
+            this.users_pass.PasswordChar = '\0';
+            this.users_pass.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.users_pass.PlaceholderText = "Парола";
+            this.users_pass.ReadOnly = true;
+            this.users_pass.SelectedText = "";
+            this.users_pass.Size = new System.Drawing.Size(306, 48);
+            this.users_pass.TabIndex = 3;
+            // 
+            // users_name
+            // 
+            this.users_name.BorderColor = System.Drawing.Color.DimGray;
+            this.users_name.BorderRadius = 12;
+            this.users_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.users_name.DefaultText = "";
+            this.users_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.users_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.users_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.users_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.users_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_name.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users_name.ForeColor = System.Drawing.Color.Black;
+            this.users_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_name.Location = new System.Drawing.Point(6, 179);
+            this.users_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.users_name.Name = "users_name";
+            this.users_name.PasswordChar = '\0';
+            this.users_name.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.users_name.PlaceholderText = "Име";
+            this.users_name.ReadOnly = true;
+            this.users_name.SelectedText = "";
+            this.users_name.Size = new System.Drawing.Size(306, 48);
+            this.users_name.TabIndex = 2;
+            // 
+            // users_uname
+            // 
+            this.users_uname.BorderColor = System.Drawing.Color.DimGray;
+            this.users_uname.BorderRadius = 12;
+            this.users_uname.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.users_uname.DefaultText = "";
+            this.users_uname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.users_uname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.users_uname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.users_uname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.users_uname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_uname.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users_uname.ForeColor = System.Drawing.Color.Black;
+            this.users_uname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.users_uname.Location = new System.Drawing.Point(6, 102);
+            this.users_uname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.users_uname.Name = "users_uname";
+            this.users_uname.PasswordChar = '\0';
+            this.users_uname.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.users_uname.PlaceholderText = "Потребителко име";
+            this.users_uname.ReadOnly = true;
+            this.users_uname.SelectedText = "";
+            this.users_uname.Size = new System.Drawing.Size(306, 48);
+            this.users_uname.TabIndex = 1;
+            // 
+            // usersComboBox
+            // 
+            this.usersComboBox.BackColor = System.Drawing.Color.Transparent;
+            this.usersComboBox.BorderColor = System.Drawing.Color.DarkGray;
+            this.usersComboBox.BorderRadius = 12;
+            this.usersComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.usersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.usersComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.usersComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.usersComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.usersComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.usersComboBox.ItemHeight = 30;
+            this.usersComboBox.Location = new System.Drawing.Point(6, 29);
+            this.usersComboBox.Name = "usersComboBox";
+            this.usersComboBox.Size = new System.Drawing.Size(306, 36);
+            this.usersComboBox.TabIndex = 0;
+            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
             // 
             // routes
             // 
@@ -180,167 +352,55 @@ namespace BDJ_System
             this.close_btn.TabStop = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
-            // usersComboBox
+            // label2
             // 
-            this.usersComboBox.BackColor = System.Drawing.Color.Transparent;
-            this.usersComboBox.BorderColor = System.Drawing.Color.DarkGray;
-            this.usersComboBox.BorderRadius = 12;
-            this.usersComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.usersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.usersComboBox.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.usersComboBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.usersComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.usersComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.usersComboBox.ItemHeight = 30;
-            this.usersComboBox.Location = new System.Drawing.Point(6, 6);
-            this.usersComboBox.Name = "usersComboBox";
-            this.usersComboBox.Size = new System.Drawing.Size(306, 36);
-            this.usersComboBox.TabIndex = 0;
-            this.usersComboBox.SelectedIndexChanged += new System.EventHandler(this.usersComboBox_SelectedIndexChanged);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(6, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 18);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Потребител";
             // 
-            // users_uname
+            // label3
             // 
-            this.users_uname.BorderColor = System.Drawing.Color.DimGray;
-            this.users_uname.BorderRadius = 12;
-            this.users_uname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.users_uname.DefaultText = "";
-            this.users_uname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.users_uname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.users_uname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.users_uname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.users_uname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_uname.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.users_uname.ForeColor = System.Drawing.Color.Black;
-            this.users_uname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_uname.Location = new System.Drawing.Point(6, 63);
-            this.users_uname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.users_uname.Name = "users_uname";
-            this.users_uname.PasswordChar = '\0';
-            this.users_uname.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.users_uname.PlaceholderText = "Username";
-            this.users_uname.ReadOnly = true;
-            this.users_uname.SelectedText = "";
-            this.users_uname.Size = new System.Drawing.Size(306, 48);
-            this.users_uname.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(6, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 18);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Потребителко име";
             // 
-            // users_name
+            // label4
             // 
-            this.users_name.BorderColor = System.Drawing.Color.DimGray;
-            this.users_name.BorderRadius = 12;
-            this.users_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.users_name.DefaultText = "";
-            this.users_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.users_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.users_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.users_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.users_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_name.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.users_name.ForeColor = System.Drawing.Color.Black;
-            this.users_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_name.Location = new System.Drawing.Point(6, 125);
-            this.users_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.users_name.Name = "users_name";
-            this.users_name.PasswordChar = '\0';
-            this.users_name.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.users_name.PlaceholderText = "Name";
-            this.users_name.ReadOnly = true;
-            this.users_name.SelectedText = "";
-            this.users_name.Size = new System.Drawing.Size(306, 48);
-            this.users_name.TabIndex = 2;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(6, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 18);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Име";
             // 
-            // users_pass
+            // label5
             // 
-            this.users_pass.BorderColor = System.Drawing.Color.DimGray;
-            this.users_pass.BorderRadius = 12;
-            this.users_pass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.users_pass.DefaultText = "";
-            this.users_pass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.users_pass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.users_pass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.users_pass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.users_pass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_pass.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.users_pass.ForeColor = System.Drawing.Color.Black;
-            this.users_pass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_pass.Location = new System.Drawing.Point(6, 187);
-            this.users_pass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.users_pass.Name = "users_pass";
-            this.users_pass.PasswordChar = '\0';
-            this.users_pass.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.users_pass.PlaceholderText = "Password";
-            this.users_pass.ReadOnly = true;
-            this.users_pass.SelectedText = "";
-            this.users_pass.Size = new System.Drawing.Size(306, 48);
-            this.users_pass.TabIndex = 3;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(6, 234);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 18);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Парола";
             // 
-            // users_isadmin
+            // label6
             // 
-            this.users_isadmin.BackColor = System.Drawing.Color.Transparent;
-            this.users_isadmin.BorderColor = System.Drawing.Color.DarkGray;
-            this.users_isadmin.BorderRadius = 12;
-            this.users_isadmin.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.users_isadmin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.users_isadmin.Enabled = false;
-            this.users_isadmin.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_isadmin.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.users_isadmin.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.users_isadmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.users_isadmin.ItemHeight = 30;
-            this.users_isadmin.Items.AddRange(new object[] {
-            "Да",
-            "Не"});
-            this.users_isadmin.Location = new System.Drawing.Point(6, 248);
-            this.users_isadmin.Name = "users_isadmin";
-            this.users_isadmin.Size = new System.Drawing.Size(306, 36);
-            this.users_isadmin.TabIndex = 4;
-            // 
-            // users_add
-            // 
-            this.users_add.BorderRadius = 12;
-            this.users_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.users_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.users_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.users_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.users_add.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.users_add.ForeColor = System.Drawing.Color.White;
-            this.users_add.Location = new System.Drawing.Point(6, 290);
-            this.users_add.Name = "users_add";
-            this.users_add.Size = new System.Drawing.Size(98, 45);
-            this.users_add.TabIndex = 5;
-            this.users_add.Text = "Add";
-            this.users_add.Click += new System.EventHandler(this.users_add_Click);
-            // 
-            // users_remove
-            // 
-            this.users_remove.BorderRadius = 12;
-            this.users_remove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.users_remove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.users_remove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.users_remove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.users_remove.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.users_remove.ForeColor = System.Drawing.Color.White;
-            this.users_remove.Location = new System.Drawing.Point(110, 290);
-            this.users_remove.Name = "users_remove";
-            this.users_remove.Size = new System.Drawing.Size(98, 45);
-            this.users_remove.TabIndex = 6;
-            this.users_remove.Text = "Remove";
-            this.users_remove.Click += new System.EventHandler(this.users_remove_Click);
-            // 
-            // users_edit
-            // 
-            this.users_edit.BorderRadius = 12;
-            this.users_edit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.users_edit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.users_edit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.users_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.users_edit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.users_edit.ForeColor = System.Drawing.Color.White;
-            this.users_edit.Location = new System.Drawing.Point(214, 290);
-            this.users_edit.Name = "users_edit";
-            this.users_edit.Size = new System.Drawing.Size(98, 45);
-            this.users_edit.TabIndex = 7;
-            this.users_edit.Text = "Edit";
-            this.users_edit.Click += new System.EventHandler(this.users_edit_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(6, 311);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 18);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Админ";
             // 
             // Form2
             // 
@@ -355,6 +415,7 @@ namespace BDJ_System
             this.Load += new System.EventHandler(this.Form2_Load);
             this.tabs.ResumeLayout(false);
             this.users.ResumeLayout(false);
+            this.users.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
@@ -381,5 +442,10 @@ namespace BDJ_System
         private Guna.UI2.WinForms.Guna2Button users_add;
         private Guna.UI2.WinForms.Guna2Button users_remove;
         private Guna.UI2.WinForms.Guna2Button users_edit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
