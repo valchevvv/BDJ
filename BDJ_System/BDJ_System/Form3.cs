@@ -48,6 +48,10 @@ namespace BDJ_System
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             var reservations = Database.GetReservations();
+            var routes = Database.GetRoutes();
+
+            string startCity
+       
         }
     }
 }
