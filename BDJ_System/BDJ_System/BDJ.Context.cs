@@ -13,10 +13,10 @@ namespace BDJ_System
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BDJ : DbContext
+    public partial class bdz12v_1Entities : DbContext
     {
-        public BDJ()
-            : base("name=BDJ")
+        public bdz12v_1Entities()
+            : base("name=bdz12v_1Entities")
         {
         }
     

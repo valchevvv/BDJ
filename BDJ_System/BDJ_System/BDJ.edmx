@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BDJM.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BDJModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cities">
           <Key>
             <PropertyRef Name="id" />
@@ -60,7 +60,7 @@ warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary 
           <Property Name="password" Type="text" />
           <Property Name="isAdmin" Type="bit" />
         </EntityType>
-        <Association Name="FK__Reservati__arriv__47DBAE45">
+        <Association Name="FK__Reservati__arriv__5AEE82B9">
           <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -72,7 +72,7 @@ warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__board__46E78A0C">
+        <Association Name="FK__Reservati__board__59FA5E80">
           <End Role="Cities" Type="Self.Cities" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -84,7 +84,7 @@ warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__passe__44FF419A">
+        <Association Name="FK__Reservati__passe__5812160E">
           <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -96,7 +96,7 @@ warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary 
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__route__45F365D3">
+        <Association Name="FK__Reservati__route__59063A47">
           <End Role="Routes" Type="Self.Routes" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservations" Multiplicity="*" />
           <ReferentialConstraint>
@@ -110,11 +110,11 @@ warning 6013: The table/view 'bdz12v_1.dbo.Route_Stops' does not have a primary 
         </Association>
         <!--Errors Found During Generation:
 error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__Route_Sto__route__3E52440B" />-->
+        <Association Name="FK__Route_Sto__route__5165187F" />-->
         <!--Errors Found During Generation:
 error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__Route_Stop__city__3F466844" />-->
-        <Association Name="FK__Routes__train__3A81B327">
+        <Association Name="FK__Route_Stop__city__52593CB8" />-->
+        <Association Name="FK__Routes__train__4D94879B">
           <End Role="Trains" Type="Self.Trains" Multiplicity="0..1" />
           <End Role="Routes" Type="Self.Routes" Multiplicity="*" />
           <ReferentialConstraint>
@@ -126,29 +126,29 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDJMStoreContainer">
+        <EntityContainer Name="BDJModelStoreContainer">
           <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservations" EntityType="Self.Reservations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trains" EntityType="Self.Trains" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Reservati__arriv__47DBAE45" Association="Self.FK__Reservati__arriv__47DBAE45">
+          <AssociationSet Name="FK__Reservati__arriv__5AEE82B9" Association="Self.FK__Reservati__arriv__5AEE82B9">
             <End Role="Cities" EntitySet="Cities" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__board__46E78A0C" Association="Self.FK__Reservati__board__46E78A0C">
+          <AssociationSet Name="FK__Reservati__board__59FA5E80" Association="Self.FK__Reservati__board__59FA5E80">
             <End Role="Cities" EntitySet="Cities" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__passe__44FF419A" Association="Self.FK__Reservati__passe__44FF419A">
+          <AssociationSet Name="FK__Reservati__passe__5812160E" Association="Self.FK__Reservati__passe__5812160E">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__route__45F365D3" Association="Self.FK__Reservati__route__45F365D3">
+          <AssociationSet Name="FK__Reservati__route__59063A47" Association="Self.FK__Reservati__route__59063A47">
             <End Role="Routes" EntitySet="Routes" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Routes__train__3A81B327" Association="Self.FK__Routes__train__3A81B327">
+          <AssociationSet Name="FK__Routes__train__4D94879B" Association="Self.FK__Routes__train__4D94879B">
             <End Role="Trains" EntitySet="Trains" />
             <End Role="Routes" EntitySet="Routes" />
           </AssociationSet>
@@ -157,15 +157,15 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BDJM" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BDJModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="City">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__arriv__47DBAE45" FromRole="Cities" ToRole="Reservations" />
-          <NavigationProperty Name="Reservations1" Relationship="Self.FK__Reservati__board__46E78A0C" FromRole="Cities" ToRole="Reservations" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__arriv__5AEE82B9" FromRole="Cities" ToRole="Reservations" />
+          <NavigationProperty Name="Reservations1" Relationship="Self.FK__Reservati__board__59FA5E80" FromRole="Cities" ToRole="Reservations" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -176,10 +176,10 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
           <Property Name="route" Type="Int32" />
           <Property Name="board" Type="Int32" />
           <Property Name="arrive" Type="Int32" />
-          <NavigationProperty Name="City" Relationship="Self.FK__Reservati__arriv__47DBAE45" FromRole="Reservations" ToRole="Cities" />
-          <NavigationProperty Name="City1" Relationship="Self.FK__Reservati__board__46E78A0C" FromRole="Reservations" ToRole="Cities" />
-          <NavigationProperty Name="User" Relationship="Self.FK__Reservati__passe__44FF419A" FromRole="Reservations" ToRole="Users" />
-          <NavigationProperty Name="Route1" Relationship="Self.FK__Reservati__route__45F365D3" FromRole="Reservations" ToRole="Routes" />
+          <NavigationProperty Name="City" Relationship="Self.FK__Reservati__arriv__5AEE82B9" FromRole="Reservations" ToRole="Cities" />
+          <NavigationProperty Name="City1" Relationship="Self.FK__Reservati__board__59FA5E80" FromRole="Reservations" ToRole="Cities" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Reservati__passe__5812160E" FromRole="Reservations" ToRole="Users" />
+          <NavigationProperty Name="Route1" Relationship="Self.FK__Reservati__route__59063A47" FromRole="Reservations" ToRole="Routes" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -192,8 +192,8 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
           <Property Name="normal_price" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="first_class" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="sleeper_class" Type="Decimal" Precision="18" Scale="0" />
-          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__route__45F365D3" FromRole="Routes" ToRole="Reservations" />
-          <NavigationProperty Name="Train1" Relationship="Self.FK__Routes__train__3A81B327" FromRole="Routes" ToRole="Trains" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__route__59063A47" FromRole="Routes" ToRole="Reservations" />
+          <NavigationProperty Name="Train1" Relationship="Self.FK__Routes__train__4D94879B" FromRole="Routes" ToRole="Trains" />
         </EntityType>
         <EntityType Name="Train">
           <Key>
@@ -202,7 +202,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="places" Type="Int32" />
           <Property Name="type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Routes" Relationship="Self.FK__Routes__train__3A81B327" FromRole="Trains" ToRole="Routes" />
+          <NavigationProperty Name="Routes" Relationship="Self.FK__Routes__train__4D94879B" FromRole="Trains" ToRole="Routes" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -213,9 +213,9 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
           <Property Name="username" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="isAdmin" Type="Boolean" />
-          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__passe__44FF419A" FromRole="Users" ToRole="Reservations" />
+          <NavigationProperty Name="Reservations" Relationship="Self.FK__Reservati__passe__5812160E" FromRole="Users" ToRole="Reservations" />
         </EntityType>
-        <Association Name="FK__Reservati__arriv__47DBAE45">
+        <Association Name="FK__Reservati__arriv__5AEE82B9">
           <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -227,7 +227,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__board__46E78A0C">
+        <Association Name="FK__Reservati__board__59FA5E80">
           <End Role="Cities" Type="Self.City" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -239,7 +239,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__passe__44FF419A">
+        <Association Name="FK__Reservati__passe__5812160E">
           <End Role="Users" Type="Self.User" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -251,7 +251,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Reservati__route__45F365D3">
+        <Association Name="FK__Reservati__route__59063A47">
           <End Role="Routes" Type="Self.Route" Multiplicity="0..1" />
           <End Role="Reservations" Type="Self.Reservation" Multiplicity="*" />
           <ReferentialConstraint>
@@ -263,7 +263,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Routes__train__3A81B327">
+        <Association Name="FK__Routes__train__4D94879B">
           <End Role="Trains" Type="Self.Train" Multiplicity="0..1" />
           <End Role="Routes" Type="Self.Route" Multiplicity="*" />
           <ReferentialConstraint>
@@ -275,29 +275,29 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDJ" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="bdz12v_1Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cities" EntityType="Self.City" />
           <EntitySet Name="Reservations" EntityType="Self.Reservation" />
           <EntitySet Name="Routes" EntityType="Self.Route" />
           <EntitySet Name="Trains" EntityType="Self.Train" />
           <EntitySet Name="Users" EntityType="Self.User" />
-          <AssociationSet Name="FK__Reservati__arriv__47DBAE45" Association="Self.FK__Reservati__arriv__47DBAE45">
+          <AssociationSet Name="FK__Reservati__arriv__5AEE82B9" Association="Self.FK__Reservati__arriv__5AEE82B9">
             <End Role="Cities" EntitySet="Cities" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__board__46E78A0C" Association="Self.FK__Reservati__board__46E78A0C">
+          <AssociationSet Name="FK__Reservati__board__59FA5E80" Association="Self.FK__Reservati__board__59FA5E80">
             <End Role="Cities" EntitySet="Cities" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__passe__44FF419A" Association="Self.FK__Reservati__passe__44FF419A">
+          <AssociationSet Name="FK__Reservati__passe__5812160E" Association="Self.FK__Reservati__passe__5812160E">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Reservati__route__45F365D3" Association="Self.FK__Reservati__route__45F365D3">
+          <AssociationSet Name="FK__Reservati__route__59063A47" Association="Self.FK__Reservati__route__59063A47">
             <End Role="Routes" EntitySet="Routes" />
             <End Role="Reservations" EntitySet="Reservations" />
           </AssociationSet>
-          <AssociationSet Name="FK__Routes__train__3A81B327" Association="Self.FK__Routes__train__3A81B327">
+          <AssociationSet Name="FK__Routes__train__4D94879B" Association="Self.FK__Routes__train__4D94879B">
             <End Role="Trains" EntitySet="Trains" />
             <End Role="Routes" EntitySet="Routes" />
           </AssociationSet>
@@ -307,9 +307,9 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BDJMStoreContainer" CdmEntityContainer="BDJ">
+        <EntityContainerMapping StorageEntityContainer="BDJModelStoreContainer" CdmEntityContainer="bdz12v_1Entities">
           <EntitySetMapping Name="Cities">
-            <EntityTypeMapping TypeName="BDJM.City">
+            <EntityTypeMapping TypeName="BDJModel.City">
               <MappingFragment StoreEntitySet="Cities">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -317,7 +317,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Reservations">
-            <EntityTypeMapping TypeName="BDJM.Reservation">
+            <EntityTypeMapping TypeName="BDJModel.Reservation">
               <MappingFragment StoreEntitySet="Reservations">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="passenger" ColumnName="passenger" />
@@ -328,7 +328,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Routes">
-            <EntityTypeMapping TypeName="BDJM.Route">
+            <EntityTypeMapping TypeName="BDJModel.Route">
               <MappingFragment StoreEntitySet="Routes">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="train" ColumnName="train" />
@@ -341,7 +341,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Trains">
-            <EntityTypeMapping TypeName="BDJM.Train">
+            <EntityTypeMapping TypeName="BDJModel.Train">
               <MappingFragment StoreEntitySet="Trains">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="places" ColumnName="places" />
@@ -350,7 +350,7 @@ error 6004: The table 'bdz12v_1.dbo.Route_Stops' is referenced by a relationship
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="BDJM.User">
+            <EntityTypeMapping TypeName="BDJModel.User">
               <MappingFragment StoreEntitySet="Users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
