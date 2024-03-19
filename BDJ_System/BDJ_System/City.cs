@@ -19,6 +19,7 @@ namespace BDJ_System
         {
             this.Reservations = new HashSet<Reservation>();
             this.Reservations1 = new HashSet<Reservation>();
+            this.Route_Stops = new HashSet<Route_Stops>();
         }
     
         public int id { get; set; }
@@ -28,5 +29,7 @@ namespace BDJ_System
         public virtual ICollection<Reservation> Reservations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Route_Stops> Route_Stops { get; set; }
     }
 }

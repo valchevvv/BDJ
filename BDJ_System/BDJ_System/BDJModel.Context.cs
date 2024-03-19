@@ -13,10 +13,10 @@ namespace BDJ_System
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bdz12v_1Entities : DbContext
+    public partial class BDJEntity : DbContext
     {
-        public bdz12v_1Entities()
-            : base("name=bdz12v_1Entities")
+        public BDJEntity()
+            : base("name=BDJEntity")
         {
         }
     
@@ -27,6 +27,7 @@ namespace BDJ_System
     
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<Route_Stops> Route_Stops { get; set; }
         public virtual DbSet<Route> Routes { get; set; }
         public virtual DbSet<Train> Trains { get; set; }
         public virtual DbSet<User> Users { get; set; }

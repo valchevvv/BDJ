@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d406428aa8434a7982c4253d2dfc0ee6" Name="Diagram1">
+        <EntityTypeShape EntityType="BDJ.City" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDJ.Reservation" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDJ.Route_Stops" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDJ.Route" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDJ.Train" Width="1.5" PointX="1.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDJ.User" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="BDJ.FK__Reservati__arriv__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="BDJ.FK__Reservati__board__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="BDJ.FK__Route_Stop__city__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="BDJ.FK__Reservati__passe__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="BDJ.FK__Reservati__route__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="BDJ.FK__Route_Sto__route__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="BDJ.FK__Routes__train__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
