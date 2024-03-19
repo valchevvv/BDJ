@@ -24,6 +24,7 @@ sleeper_class decimal default null
 )
 
 create table Route_Stops(
+id int primary key identity,
 route int foreign key references Routes(id),
 city int foreign key references Cities(id),
 number int,
