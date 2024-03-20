@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 
 namespace BDJ_System
 {
@@ -68,6 +69,45 @@ namespace BDJ_System
         public static List<Route> GetRoutes()
         {
             return getContext().Routes.ToList();
+        }
+
+        public static Route GetRoute(int id)
+        {
+            return getContext().Routes.ToList().Find(x => x.id == id);
+        }
+
+        public static List<Route_Stops> GetRoute_Stops(int route_id)
+        {
+            return getContext().Route_Stops.ToList().Where(x => (int)x.route == route_id).OrderBy(x => x.number).ToList();
+        }
+        
+        public static Route_Stops[] FirstAndLastRouteStop(int route_id)
+        {
+            Route_Stops[] stops = GetRoute_Stops(route_id).ToArray();
+            Route_Stops[] first_last = { stops[0], stops[stops.Length - 1] };
+            return first_last;
+        }
+
+        public static City GetCityById(int id)
+        {
+            return getContext().Cities.ToList().Find(x => x.id == id);
+        }
+
+        public static Route_Stops GetRoute_Stop(int id)
+        {
+            return getContext().Route_Stops.ToList().Find(x => x.id == id);
+        }
+
+        public static void MakeReservation(int passenger, int route, int board, int arrive)
+        {
+            Reservation reservation = new Reservation();
+            reservation.passenger = passenger;
+            reservation.route = route;
+            reservation.board = board;
+            reservation.arrive = arrive;
+            BDJEntity context = getContext();
+            context.Reservations.Add(reservation);
+            context.SaveChanges();
         }
     }
 }

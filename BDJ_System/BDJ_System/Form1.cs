@@ -64,7 +64,7 @@ namespace BDJ_System
 
             if(user != null)
             {
-                Form3 form2 = new Form3();
+                Form3 form2 = new Form3(user);
                 form2.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
                 form2.Show();
                 this.Hide();
