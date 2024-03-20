@@ -76,19 +76,21 @@ namespace BDJ_System
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.close_btn);
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(806, 55);
+            this.guna2Panel1.Size = new System.Drawing.Size(604, 45);
             this.guna2Panel1.TabIndex = 1;
             this.guna2Panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseMove);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Location = new System.Drawing.Point(9, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 23);
+            this.label1.Size = new System.Drawing.Size(312, 18);
             this.label1.TabIndex = 4;
             this.label1.Text = "Български Държавни Железници";
             // 
@@ -97,9 +99,10 @@ namespace BDJ_System
             this.close_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.close_btn.BackColor = System.Drawing.Color.Transparent;
             this.close_btn.Image = ((System.Drawing.Image)(resources.GetObject("close_btn.Image")));
-            this.close_btn.Location = new System.Drawing.Point(757, 5);
+            this.close_btn.Location = new System.Drawing.Point(568, 4);
+            this.close_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.close_btn.Name = "close_btn";
-            this.close_btn.Size = new System.Drawing.Size(40, 40);
+            this.close_btn.Size = new System.Drawing.Size(30, 32);
             this.close_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.close_btn.TabIndex = 2;
             this.close_btn.TabStop = false;
@@ -112,11 +115,11 @@ namespace BDJ_System
             this.guna2TabControl1.Controls.Add(this.tabPage2);
             this.guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(0, 50);
-            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2TabControl1.Location = new System.Drawing.Point(0, 40);
+            this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(806, 407);
+            this.guna2TabControl1.Size = new System.Drawing.Size(604, 331);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -148,10 +151,10 @@ namespace BDJ_System
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.routeComboBox);
             this.tabPage1.Location = new System.Drawing.Point(184, 4);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(618, 399);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Size = new System.Drawing.Size(416, 323);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Купи билет";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -160,9 +163,10 @@ namespace BDJ_System
             // 
             this.price_lbl.AutoSize = true;
             this.price_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.price_lbl.Location = new System.Drawing.Point(9, 205);
+            this.price_lbl.Location = new System.Drawing.Point(7, 167);
+            this.price_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.price_lbl.Name = "price_lbl";
-            this.price_lbl.Size = new System.Drawing.Size(0, 20);
+            this.price_lbl.Size = new System.Drawing.Size(0, 17);
             this.price_lbl.TabIndex = 7;
             // 
             // guna2Button1
@@ -174,9 +178,10 @@ namespace BDJ_System
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(6, 234);
+            this.guna2Button1.Location = new System.Drawing.Point(4, 190);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(275, 45);
+            this.guna2Button1.Size = new System.Drawing.Size(206, 37);
             this.guna2Button1.TabIndex = 6;
             this.guna2Button1.Text = "Купи";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -185,9 +190,10 @@ namespace BDJ_System
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 136);
+            this.label4.Location = new System.Drawing.Point(2, 110);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 18);
+            this.label4.Size = new System.Drawing.Size(25, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "До";
             // 
@@ -203,9 +209,10 @@ namespace BDJ_System
             this.arriveComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.arriveComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.arriveComboBox.ItemHeight = 30;
-            this.arriveComboBox.Location = new System.Drawing.Point(6, 157);
+            this.arriveComboBox.Location = new System.Drawing.Point(4, 128);
+            this.arriveComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.arriveComboBox.Name = "arriveComboBox";
-            this.arriveComboBox.Size = new System.Drawing.Size(275, 36);
+            this.arriveComboBox.Size = new System.Drawing.Size(207, 36);
             this.arriveComboBox.TabIndex = 4;
             this.arriveComboBox.SelectedIndexChanged += new System.EventHandler(this.arriveComboBox_SelectedIndexChanged);
             // 
@@ -213,9 +220,10 @@ namespace BDJ_System
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 70);
+            this.label3.Location = new System.Drawing.Point(2, 57);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 18);
+            this.label3.Size = new System.Drawing.Size(25, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "От";
             // 
@@ -231,9 +239,10 @@ namespace BDJ_System
             this.boardComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.boardComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.boardComboBox.ItemHeight = 30;
-            this.boardComboBox.Location = new System.Drawing.Point(6, 91);
+            this.boardComboBox.Location = new System.Drawing.Point(4, 74);
+            this.boardComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.boardComboBox.Name = "boardComboBox";
-            this.boardComboBox.Size = new System.Drawing.Size(275, 36);
+            this.boardComboBox.Size = new System.Drawing.Size(207, 36);
             this.boardComboBox.TabIndex = 2;
             this.boardComboBox.SelectedIndexChanged += new System.EventHandler(this.boardComboBox_SelectedIndexChanged);
             // 
@@ -241,9 +250,10 @@ namespace BDJ_System
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(3, 4);
+            this.label2.Location = new System.Drawing.Point(2, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 18);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 1;
             this.label2.Text = "Маршрут";
             // 
@@ -258,9 +268,10 @@ namespace BDJ_System
             this.routeComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.routeComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.routeComboBox.ItemHeight = 30;
-            this.routeComboBox.Location = new System.Drawing.Point(6, 25);
+            this.routeComboBox.Location = new System.Drawing.Point(4, 20);
+            this.routeComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.routeComboBox.Name = "routeComboBox";
-            this.routeComboBox.Size = new System.Drawing.Size(275, 36);
+            this.routeComboBox.Size = new System.Drawing.Size(207, 36);
             this.routeComboBox.TabIndex = 0;
             this.routeComboBox.SelectedIndexChanged += new System.EventHandler(this.routeComboBox_SelectedIndexChanged);
             // 
@@ -268,10 +279,10 @@ namespace BDJ_System
             // 
             this.tabPage2.Controls.Add(this.dataGridView);
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(618, 399);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Size = new System.Drawing.Size(416, 323);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Моите билети";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -289,7 +300,8 @@ namespace BDJ_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.ColumnHeadersHeight = 27;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.route,
             this.board,
@@ -305,14 +317,15 @@ namespace BDJ_System
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dataGridView.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView.Location = new System.Drawing.Point(2, 2);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(612, 395);
+            this.dataGridView.Size = new System.Drawing.Size(412, 319);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -325,7 +338,7 @@ namespace BDJ_System
             this.dataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.dataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dataGridView.ThemeStyle.HeaderStyle.Height = 27;
             this.dataGridView.ThemeStyle.ReadOnly = true;
             this.dataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -366,12 +379,13 @@ namespace BDJ_System
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 457);
+            this.ClientSize = new System.Drawing.Size(604, 371);
             this.Controls.Add(this.guna2TabControl1);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form3";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
