@@ -19,7 +19,7 @@ namespace BDJ_System
         {
             InitializeComponent();
             saved_login = login;
-            label1.Text = $"Български Държавни Железници | {login.name}";
+            label1.Text = $"Български Държавни Железници | ({login.name})";
         }
 
         private void close_btn_Click(object sender, EventArgs e)
@@ -47,9 +47,6 @@ namespace BDJ_System
         private void loadRoutes()
         {
             routeComboBox.Items.Clear();
-
-
-
             Database.GetRoutes().ForEach(x => routeComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)Database.FirstAndLastRouteStop(x.id)[0].city).name} - {Database.GetCityById((int)Database.FirstAndLastRouteStop(x.id)[1].city).name}"));
         }
 
@@ -79,7 +76,6 @@ namespace BDJ_System
             dataGridView.Rows.Clear();
             foreach (Reservation reservation in Database.GetReservationsByUser(saved_login.id))
             {
-                label1.Text += $" {reservation.route}";
                 string route = Database.GetCityById((int)Database.FirstAndLastRouteStop((int)reservation.route)[0].city).name;
                 route += $" - {Database.GetCityById((int)Database.FirstAndLastRouteStop((int)reservation.route)[1].city).name}";
 
@@ -108,7 +104,11 @@ namespace BDJ_System
             stops.RemoveAt(stops.Count - 1);
             stops.ForEach(x => boardComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)x.city).name}"));
             boardComboBox.SelectedIndex = 0;
-            Database.GetRoute_Stops(route.id).ToList().ForEach(x => arriveComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)x.city).name}"));
+            arriveComboBox.Items.Clear();
+
+            List<Route_Stops> arriveStops = Database.GetRoute_Stops(route.id).ToList();
+            arriveStops.RemoveAt(0);
+            arriveStops.ForEach(x => arriveComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)x.city).name}"));
             arriveComboBox.SelectedIndex = arriveComboBox.Items.Count - 1;
         }
 

@@ -66,8 +66,8 @@ namespace BDJ_System
             {
                 if((bool)user.isAdmin)
                 {
-                    // Form2 form = new Form2();
-                    Form3 form = new Form3(user);
+                    Form2 form = new Form2();
+                    // Form3 form = new Form3(user);
                     form.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
                     form.Show();
                 } else
