@@ -89,6 +89,7 @@ namespace BDJ_System
         public static Route_Stops[] FirstAndLastRouteStop(int route_id)
         {
             Route_Stops[] stops = GetRoute_Stops(route_id).ToArray();
+            if (stops.Length <= 0) return new Route_Stops[] { };
             Route_Stops[] first_last = { stops[0], stops[stops.Length - 1] };
             return first_last;
         }
@@ -113,6 +114,11 @@ namespace BDJ_System
             BDJEntity context = getContext();
             context.Reservations.Add(reservation);
             context.SaveChanges();
+        }
+
+        public static List<Reservation> GetReservationsByUser(int id)
+        {
+            return getContext().Reservations.ToList().Where(x => x.passenger == id).ToList();
         }
     }
 }

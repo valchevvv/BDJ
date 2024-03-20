@@ -66,14 +66,15 @@ namespace BDJ_System
             {
                 if((bool)user.isAdmin)
                 {
-                    Form2 form2 = new Form2();
-                    form2.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
-                    form2.Show();
+                    // Form2 form = new Form2();
+                    Form3 form = new Form3(user);
+                    form.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
+                    form.Show();
                 } else
                 {
-                    Form3 form3 = new Form3(user);
-                    form3.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
-                    form3.Show();
+                    Form3 form = new Form3(user);
+                    form.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
+                    form.Show();
                 }
                 this.Hide();
                 MessageDialog.Show($"Добре дошли отново {user.username}");

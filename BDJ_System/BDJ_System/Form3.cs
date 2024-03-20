@@ -71,6 +71,31 @@ namespace BDJ_System
         private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (guna2TabControl1.SelectedIndex == 0) loadRoutes();
+            else if (guna2TabControl1.SelectedIndex == 1) loadReservations();
+        }
+
+        private void loadReservations()
+        {
+            dataGridView.Rows.Clear();
+            foreach (Reservation reservation in Database.GetReservationsByUser(saved_login.id))
+            {
+                label1.Text += $" {reservation.route}";
+                string route = Database.GetCityById((int)Database.FirstAndLastRouteStop((int)reservation.route)[0].city).name;
+                route += $" - {Database.GetCityById((int)Database.FirstAndLastRouteStop((int)reservation.route)[1].city).name}";
+
+                string board = Database.GetCityById((int)reservation.board).name;
+                string arrive = Database.GetCityById((int)reservation.arrive).name;
+
+                int board_number = (int)Database.GetRoute_Stop((int)reservation.board).number;
+                int arrive_number = (int)Database.GetRoute_Stop((int)reservation.arrive).number;
+                int route_stops_count = Math.Abs(arrive_number - board_number);
+
+                decimal price = (decimal)Database.GetRoute((int)reservation.route).normal_price * (int)route_stops_count;
+
+                string[] info = { route, board, arrive, $"{price:c}" };
+                dataGridView.Rows.Add(info);
+            }
+
         }
 
         private void routeComboBox_SelectedIndexChanged(object sender, EventArgs e)

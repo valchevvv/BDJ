@@ -31,12 +31,16 @@ namespace BDJ_System
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.price_lbl = new System.Windows.Forms.Label();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
             this.arriveComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -45,18 +49,17 @@ namespace BDJ_System
             this.label2 = new System.Windows.Forms.Label();
             this.routeComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.guna2HtmlLabel9 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.price_lbl = new System.Windows.Forms.Label();
+            this.dataGridView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.route = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.board = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -152,6 +155,15 @@ namespace BDJ_System
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Купи билет";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // price_lbl
+            // 
+            this.price_lbl.AutoSize = true;
+            this.price_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.price_lbl.Location = new System.Drawing.Point(9, 205);
+            this.price_lbl.Name = "price_lbl";
+            this.price_lbl.Size = new System.Drawing.Size(0, 20);
+            this.price_lbl.TabIndex = 7;
             // 
             // guna2Button1
             // 
@@ -254,12 +266,7 @@ namespace BDJ_System
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.guna2HtmlLabel9);
-            this.tabPage2.Controls.Add(this.guna2HtmlLabel8);
-            this.tabPage2.Controls.Add(this.guna2HtmlLabel7);
-            this.tabPage2.Controls.Add(this.guna2HtmlLabel6);
-            this.tabPage2.Controls.Add(this.guna2HtmlLabel5);
-            this.tabPage2.Controls.Add(this.guna2ComboBox2);
+            this.tabPage2.Controls.Add(this.dataGridView);
             this.tabPage2.Location = new System.Drawing.Point(184, 4);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
@@ -269,81 +276,93 @@ namespace BDJ_System
             this.tabPage2.Text = "Моите билети";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // guna2HtmlLabel9
+            // dataGridView
             // 
-            this.guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel9.Location = new System.Drawing.Point(23, 147);
-            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            this.guna2HtmlLabel9.Size = new System.Drawing.Size(35, 18);
-            this.guna2HtmlLabel9.TabIndex = 5;
-            this.guna2HtmlLabel9.Text = "цена";
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.route,
+            this.board,
+            this.arrive,
+            this.price});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView.MultiSelect = false;
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.RowHeadersWidth = 51;
+            this.dataGridView.RowTemplate.Height = 24;
+            this.dataGridView.Size = new System.Drawing.Size(612, 395);
+            this.dataGridView.TabIndex = 0;
+            this.dataGridView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dataGridView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dataGridView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dataGridView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dataGridView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.dataGridView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.ThemeStyle.HeaderStyle.Height = 27;
+            this.dataGridView.ThemeStyle.ReadOnly = true;
+            this.dataGridView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dataGridView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
+            this.dataGridView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dataGridView.ThemeStyle.RowsStyle.Height = 24;
+            this.dataGridView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dataGridView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // guna2HtmlLabel8
+            // route
             // 
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(23, 125);
-            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(34, 18);
-            this.guna2HtmlLabel8.TabIndex = 4;
-            this.guna2HtmlLabel8.Text = "дата";
+            this.route.HeaderText = "Маршрут";
+            this.route.MinimumWidth = 6;
+            this.route.Name = "route";
+            this.route.ReadOnly = true;
             // 
-            // guna2HtmlLabel7
+            // board
             // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(23, 102);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(131, 18);
-            this.guna2HtmlLabel7.TabIndex = 3;
-            this.guna2HtmlLabel7.Text = "Крайна дестинация";
+            this.board.HeaderText = "Качване";
+            this.board.MinimumWidth = 6;
+            this.board.Name = "board";
+            this.board.ReadOnly = true;
             // 
-            // guna2HtmlLabel6
+            // arrive
             // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(23, 80);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(141, 18);
-            this.guna2HtmlLabel6.TabIndex = 2;
-            this.guna2HtmlLabel6.Text = "Начална дестинация";
+            this.arrive.HeaderText = "Слизане";
+            this.arrive.MinimumWidth = 6;
+            this.arrive.Name = "arrive";
+            this.arrive.ReadOnly = true;
             // 
-            // guna2HtmlLabel5
+            // price
             // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(23, 13);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(106, 18);
-            this.guna2HtmlLabel5.TabIndex = 1;
-            this.guna2HtmlLabel5.Text = "Избор на билет";
-            // 
-            // guna2ComboBox2
-            // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderRadius = 12;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(15, 35);
-            this.guna2ComboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(208, 36);
-            this.guna2ComboBox2.TabIndex = 0;
-            // 
-            // price_lbl
-            // 
-            this.price_lbl.AutoSize = true;
-            this.price_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.price_lbl.Location = new System.Drawing.Point(9, 205);
-            this.price_lbl.Name = "price_lbl";
-            this.price_lbl.Size = new System.Drawing.Size(0, 20);
-            this.price_lbl.TabIndex = 7;
+            this.price.HeaderText = "Цена";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
             // 
             // Form3
             // 
@@ -363,7 +382,7 @@ namespace BDJ_System
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -377,12 +396,6 @@ namespace BDJ_System
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel7;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
         private Guna.UI2.WinForms.Guna2ComboBox routeComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
@@ -391,5 +404,10 @@ namespace BDJ_System
         private Guna.UI2.WinForms.Guna2ComboBox boardComboBox;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.Label price_lbl;
+        private Guna.UI2.WinForms.Guna2DataGridView dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn route;
+        private System.Windows.Forms.DataGridViewTextBoxColumn board;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
     }
 }
