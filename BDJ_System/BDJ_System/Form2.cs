@@ -39,14 +39,29 @@ namespace BDJ_System
             Database.GetUsers().ForEach(x => usersComboBox.Items.Add($"{x.id}) {x.name}"));
         }
 
+        private void loadTrains()
+        {
+            trainComboBox.Items.Clear();
+            Database.GetTrains().ForEach(x => trainComboBox.Items.Add($"{x.id}) {x.type}"));
+        }
+
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabs.SelectedTab.Name == "users") loadUsers();
+
+            if (tabs.SelectedTab.Name == "users")
+            {
+                loadUsers();
+            } 
+            else if (tabs.SelectedTab.Name == "trains")
+            {
+                loadTrains();
+            }
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             loadUsers();
+            loadTrains();
         }
 
         private void usersComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -166,6 +181,14 @@ namespace BDJ_System
 
             trainPlacesText.Clear();
             typeTrainText.Clear();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            var date = guna2DateTimePicker1.Value;
+
+            MessageBox.Show($"{date.Year}");
+            
         }
     }
 }

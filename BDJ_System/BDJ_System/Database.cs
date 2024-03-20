@@ -75,6 +75,11 @@ namespace BDJ_System
         {
             return getContext().Routes.ToList().Find(x => x.id == id);
         }
+        
+        public static List<Train> GetTrains()
+        {
+            return getContext().Trains.ToList();
+        }
 
         public static List<Route_Stops> GetRoute_Stops(int route_id)
         {
