@@ -49,15 +49,15 @@ namespace BDJ_System
             this.usersComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.routes = new System.Windows.Forms.TabPage();
             this.trains = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.typeTrainText = new Guna.UI2.WinForms.Guna2TextBox();
+            this.trainPlacesText = new Guna.UI2.WinForms.Guna2TextBox();
             this.stops = new System.Windows.Forms.TabPage();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabs.SuspendLayout();
             this.users.SuspendLayout();
             this.trains.SuspendLayout();
@@ -358,14 +358,98 @@ namespace BDJ_System
             this.trains.Controls.Add(this.label8);
             this.trains.Controls.Add(this.label10);
             this.trains.Controls.Add(this.guna2Button1);
-            this.trains.Controls.Add(this.guna2TextBox1);
-            this.trains.Controls.Add(this.guna2TextBox3);
+            this.trains.Controls.Add(this.typeTrainText);
+            this.trains.Controls.Add(this.trainPlacesText);
             this.trains.Location = new System.Drawing.Point(184, 4);
             this.trains.Name = "trains";
             this.trains.Size = new System.Drawing.Size(794, 510);
             this.trains.TabIndex = 2;
             this.trains.Text = "Влакове";
             this.trains.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(28, 101);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 18);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Тип";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(28, 18);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 18);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Брой места";
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.BorderRadius = 12;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(28, 187);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(306, 45);
+            this.guna2Button1.TabIndex = 19;
+            this.guna2Button1.Text = "Добави";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // typeTrainText
+            // 
+            this.typeTrainText.BorderColor = System.Drawing.Color.DimGray;
+            this.typeTrainText.BorderRadius = 12;
+            this.typeTrainText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.typeTrainText.DefaultText = "";
+            this.typeTrainText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.typeTrainText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.typeTrainText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.typeTrainText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.typeTrainText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.typeTrainText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.typeTrainText.ForeColor = System.Drawing.Color.Black;
+            this.typeTrainText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.typeTrainText.Location = new System.Drawing.Point(28, 123);
+            this.typeTrainText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.typeTrainText.Name = "typeTrainText";
+            this.typeTrainText.PasswordChar = '\0';
+            this.typeTrainText.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.typeTrainText.PlaceholderText = "Тип на влака";
+            this.typeTrainText.SelectedText = "";
+            this.typeTrainText.Size = new System.Drawing.Size(306, 48);
+            this.typeTrainText.TabIndex = 15;
+            // 
+            // trainPlacesText
+            // 
+            this.trainPlacesText.BorderColor = System.Drawing.Color.DimGray;
+            this.trainPlacesText.BorderRadius = 12;
+            this.trainPlacesText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.trainPlacesText.DefaultText = "";
+            this.trainPlacesText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.trainPlacesText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.trainPlacesText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.trainPlacesText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.trainPlacesText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.trainPlacesText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.trainPlacesText.ForeColor = System.Drawing.Color.Black;
+            this.trainPlacesText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.trainPlacesText.Location = new System.Drawing.Point(28, 40);
+            this.trainPlacesText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.trainPlacesText.Name = "trainPlacesText";
+            this.trainPlacesText.PasswordChar = '\0';
+            this.trainPlacesText.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.trainPlacesText.PlaceholderText = "Места";
+            this.trainPlacesText.SelectedText = "";
+            this.trainPlacesText.Size = new System.Drawing.Size(306, 48);
+            this.trainPlacesText.TabIndex = 13;
             // 
             // stops
             // 
@@ -412,91 +496,6 @@ namespace BDJ_System
             this.close_btn.TabIndex = 2;
             this.close_btn.TabStop = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(28, 101);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 18);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Брой места";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(28, 18);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 18);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Номер на влак";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 12;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(28, 187);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(306, 45);
-            this.guna2Button1.TabIndex = 19;
-            this.guna2Button1.Text = "Добави";
-            // 
-            // guna2TextBox1
-            // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox1.BorderRadius = 12;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(28, 123);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox1.PlaceholderText = "Парола";
-            this.guna2TextBox1.ReadOnly = true;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(306, 48);
-            this.guna2TextBox1.TabIndex = 15;
-            // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.BorderColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox3.BorderRadius = 12;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(28, 40);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.guna2TextBox3.PlaceholderText = "Потребителко име";
-            this.guna2TextBox3.ReadOnly = true;
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(306, 48);
-            this.guna2TextBox3.TabIndex = 13;
             // 
             // Form2
             // 
@@ -548,7 +547,7 @@ namespace BDJ_System
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox typeTrainText;
+        private Guna.UI2.WinForms.Guna2TextBox trainPlacesText;
     }
 }

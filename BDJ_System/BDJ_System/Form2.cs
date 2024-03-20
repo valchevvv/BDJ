@@ -151,5 +151,21 @@ namespace BDJ_System
             users_add.Enabled = false;
             users_remove.Enabled = false;
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            if (isEmpty(trainPlacesText.Text) || isEmpty(typeTrainText.Text)) return;
+
+            Train newtrain = new Train();
+
+            newtrain.places = int.Parse(trainPlacesText.Text);
+            newtrain.type = typeTrainText.Text;
+
+            Database.AddTrain(newtrain);
+
+
+            trainPlacesText.Clear();
+            typeTrainText.Clear();
+        }
     }
 }

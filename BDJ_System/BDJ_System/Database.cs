@@ -32,6 +32,13 @@ namespace BDJ_System
             bdj.SaveChanges();
         }
 
+        public static void AddTrain(Train train)
+        {
+            BDJEntity bdj = getContext();
+            bdj.Trains.Add(train);
+            bdj.SaveChanges();
+        }
+
         public static void EditUser(int id, string uname, string name, string pass, bool isAdmin)
         {
             BDJEntity bdj = getContext();
