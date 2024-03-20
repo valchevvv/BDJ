@@ -8,9 +8,9 @@ namespace BDJ_System
 {
     static class Database
     {   
-        private static BDJ getContext()
+        public static BDJEntity getContext()
         {
-            return new BDJ();
+            return new BDJEntity();
         }
 
         public static List<User> GetUsers()
@@ -20,21 +20,21 @@ namespace BDJ_System
 
         public static void AddUser(User user)
         {
-            BDJ bdj = getContext();
+            BDJEntity bdj = getContext();
             bdj.Users.Add(user);
             bdj.SaveChanges();
         }
 
         public static void DeleteUser(User user)
         {
-            BDJ bdj = getContext();
+            BDJEntity bdj = getContext();
             bdj.Users.Remove(user);
             bdj.SaveChanges();
         }
 
         public static void EditUser(int id, string uname, string name, string pass, bool isAdmin)
         {
-            BDJ bdj = getContext();
+            BDJEntity bdj = getContext();
             User user = bdj.Users.ToList().Find(x => x.id == id);
             user.username = uname;
             user.name = name;

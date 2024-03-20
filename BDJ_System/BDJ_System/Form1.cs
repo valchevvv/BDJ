@@ -31,16 +31,11 @@ namespace BDJ_System
             this.Close();
         }
 
-        private BDJ getContext()
-        {
-            return new BDJ();
-        }
-
         private User login(string username, string password)
         {
-            int index = getContext().Users.ToList().FindIndex(x => x.username == username && x.password == password);
+            int index = Database.getContext().Users.ToList().FindIndex(x => x.username == username && x.password == password);
 
-            return index != -1 ? getContext().Users.ToList().Find(x => x.username == username && x.password == password) : null;
+            return index != -1 ? Database.getContext().Users.ToList().Find(x => x.username == username && x.password == password) : null;
         }
 
         bool show_pass = false;
