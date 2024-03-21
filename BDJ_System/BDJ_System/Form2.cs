@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -62,6 +64,9 @@ namespace BDJ_System
         {
             loadUsers();
             loadTrains();
+            guna2NumericUpDown1.Maximum = 24;
+            guna2NumericUpDown2.Maximum = 59;
+            
         }
 
         private void usersComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,17 +183,74 @@ namespace BDJ_System
 
             Database.AddTrain(newtrain);
 
-
             trainPlacesText.Clear();
             typeTrainText.Clear();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            var date = guna2DateTimePicker1.Value;
-
-            MessageBox.Show($"{date.Year}");
+           
+            if (trainComboBox.SelectedIndex == -1) { MessageDialogAdmin.Show("Не е избран влак!", "Грешка"); return; }
+            if (isEmpty(normalPriceText.Text)) { MessageDialogAdmin.Show("Въвеждането на основна цена е задължително!", "Грешка"); return; }
             
+            int trainID = int.Parse(trainComboBox.SelectedItem.ToString().Split(')')[0]);
+            DateTime start_date = DateParse(guna2DateTimePicker1.Value.Year, guna2DateTimePicker1.Value.Month, guna2DateTimePicker1.Value.Day, guna2NumericUpDown1.Value, guna2NumericUpDown2.Value);
+            DateTime end_date = DateParse(guna2DateTimePicker2.Value.Year, guna2DateTimePicker2.Value.Month, guna2DateTimePicker2.Value.Day, guna2NumericUpDown4.Value, guna2NumericUpDown3.Value);
+            decimal normal_price = decimal.Parse(normalPriceText.Text);
+
+            Route newRoute = new Route();
+
+            newRoute.train = trainID;
+            newRoute.start_date = start_date;
+            newRoute.end_date = end_date;
+            newRoute.normal_price = normal_price;
+            if (isEmpty(firstClassText.Text)) { newRoute.first_class = null; }
+            else { newRoute.first_class = decimal.Parse(firstClassText.Text); }
+            if(isEmpty(sleeperClassText.Text)) { newRoute.sleeper_class= null; } 
+            else { newRoute.sleeper_class = decimal.Parse(sleeperClassText.Text); }
+
+            //Database.AddRoute(newRoute);
+            ClearDataRoutes();
+
+        }
+
+        private DateTime DateParse(int year, int mount,int day,decimal hour, decimal minute)
+        {
+            return DateTime.Parse($"{year}-{mount}-{day} {hour}:{minute}:00.000");
+        }
+
+        private void ClearDataRoutes()
+        {
+            trainComboBox.SelectedIndex= -1;
+            guna2NumericUpDown1.Value = 0;
+            guna2NumericUpDown2.Value = 0;
+            guna2NumericUpDown3.Value = 0;
+            guna2NumericUpDown4.Value = 0;
+            normalPriceText.Clear();
+            firstClassText.Clear();
+            sleeperClassText.Clear();
+        }
+
+        private void addCityBtn_Click(object sender, EventArgs e)
+        {
+            
+            if (isEmpty(cityNameText.Text))return;
+            if (ContainsCity(Database.GetCities(), cityNameText.Text)) { MessageDialogAdmin.Show("Този град вече е въведен!", "Грешка"); cityNameText.Clear(); return; }
+
+            City newCity = new City();
+
+            newCity.name= cityNameText.Text;
+
+            Database.AddCity(newCity);
+            cityNameText.Clear();
+
+        }
+
+        private bool ContainsCity(List<City> cities, string name)
+        {
+            bool contains = false;
+            foreach (City city in cities) { if (city.name == name) { contains = true; } }
+            return contains;
         }
     }
 }

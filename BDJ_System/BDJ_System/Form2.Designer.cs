@@ -67,6 +67,26 @@ namespace BDJ_System
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.guna2NumericUpDown3 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.guna2NumericUpDown4 = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.guna2DateTimePicker2 = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.normalPriceText = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.firstClassText = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.sleeperClassText = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.MessageDialogAdmin = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
+            this.addCityBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.cityNameText = new Guna.UI2.WinForms.Guna2TextBox();
             this.tabs.SuspendLayout();
             this.users.SuspendLayout();
             this.routes.SuspendLayout();
@@ -75,6 +95,9 @@ namespace BDJ_System
             this.trains.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown4)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2BorderlessForm1
@@ -93,6 +116,7 @@ namespace BDJ_System
             this.tabs.Controls.Add(this.routes);
             this.tabs.Controls.Add(this.trains);
             this.tabs.Controls.Add(this.stops);
+            this.tabs.Controls.Add(this.tabPage1);
             this.tabs.ItemSize = new System.Drawing.Size(180, 40);
             this.tabs.Location = new System.Drawing.Point(0, 40);
             this.tabs.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -277,6 +301,7 @@ namespace BDJ_System
             // 
             this.users_pass.BorderColor = System.Drawing.Color.DimGray;
             this.users_pass.BorderRadius = 12;
+            this.users_pass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.users_pass.DefaultText = "";
             this.users_pass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.users_pass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -301,6 +326,7 @@ namespace BDJ_System
             // 
             this.users_name.BorderColor = System.Drawing.Color.DimGray;
             this.users_name.BorderRadius = 12;
+            this.users_name.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.users_name.DefaultText = "";
             this.users_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.users_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -325,6 +351,7 @@ namespace BDJ_System
             // 
             this.users_uname.BorderColor = System.Drawing.Color.DimGray;
             this.users_uname.BorderRadius = 12;
+            this.users_uname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.users_uname.DefaultText = "";
             this.users_uname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.users_uname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -366,6 +393,21 @@ namespace BDJ_System
             // 
             // routes
             // 
+            this.routes.Controls.Add(this.label21);
+            this.routes.Controls.Add(this.label20);
+            this.routes.Controls.Add(this.label19);
+            this.routes.Controls.Add(this.label18);
+            this.routes.Controls.Add(this.sleeperClassText);
+            this.routes.Controls.Add(this.label17);
+            this.routes.Controls.Add(this.firstClassText);
+            this.routes.Controls.Add(this.label16);
+            this.routes.Controls.Add(this.normalPriceText);
+            this.routes.Controls.Add(this.label13);
+            this.routes.Controls.Add(this.label14);
+            this.routes.Controls.Add(this.guna2NumericUpDown3);
+            this.routes.Controls.Add(this.guna2NumericUpDown4);
+            this.routes.Controls.Add(this.guna2DateTimePicker2);
+            this.routes.Controls.Add(this.label15);
             this.routes.Controls.Add(this.label12);
             this.routes.Controls.Add(this.label11);
             this.routes.Controls.Add(this.guna2NumericUpDown2);
@@ -388,7 +430,7 @@ namespace BDJ_System
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(119, 133);
+            this.label12.Location = new System.Drawing.Point(123, 139);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 15);
@@ -399,7 +441,7 @@ namespace BDJ_System
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(18, 133);
+            this.label11.Location = new System.Drawing.Point(18, 139);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 15);
@@ -410,20 +452,22 @@ namespace BDJ_System
             // 
             this.guna2NumericUpDown2.BackColor = System.Drawing.Color.Transparent;
             this.guna2NumericUpDown2.BorderRadius = 12;
-            this.guna2NumericUpDown2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2NumericUpDown2.Location = new System.Drawing.Point(175, 126);
+            this.guna2NumericUpDown2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2NumericUpDown2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2NumericUpDown2.Location = new System.Drawing.Point(185, 132);
             this.guna2NumericUpDown2.Name = "guna2NumericUpDown2";
-            this.guna2NumericUpDown2.Size = new System.Drawing.Size(42, 28);
+            this.guna2NumericUpDown2.Size = new System.Drawing.Size(62, 38);
             this.guna2NumericUpDown2.TabIndex = 33;
             // 
             // guna2NumericUpDown1
             // 
             this.guna2NumericUpDown1.BackColor = System.Drawing.Color.Transparent;
             this.guna2NumericUpDown1.BorderRadius = 12;
-            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(52, 126);
+            this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2NumericUpDown1.Location = new System.Drawing.Point(52, 132);
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(42, 28);
+            this.guna2NumericUpDown1.Size = new System.Drawing.Size(62, 38);
             this.guna2NumericUpDown1.TabIndex = 31;
             // 
             // guna2DateTimePicker1
@@ -431,10 +475,10 @@ namespace BDJ_System
             this.guna2DateTimePicker1.BorderRadius = 12;
             this.guna2DateTimePicker1.Checked = true;
             this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(21, 98);
-            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(21, 104);
+            this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -446,7 +490,7 @@ namespace BDJ_System
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(18, 73);
+            this.label7.Location = new System.Drawing.Point(18, 79);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 15);
@@ -465,7 +509,7 @@ namespace BDJ_System
             this.trainComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.trainComboBox.ItemHeight = 30;
             this.trainComboBox.Location = new System.Drawing.Point(18, 38);
-            this.trainComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trainComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.trainComboBox.Name = "trainComboBox";
             this.trainComboBox.Size = new System.Drawing.Size(197, 36);
             this.trainComboBox.TabIndex = 28;
@@ -490,10 +534,10 @@ namespace BDJ_System
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(11, 218);
+            this.guna2Button2.Location = new System.Drawing.Point(18, 313);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(229, 36);
+            this.guna2Button2.Size = new System.Drawing.Size(491, 36);
             this.guna2Button2.TabIndex = 25;
             this.guna2Button2.Text = "Добави";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -556,6 +600,7 @@ namespace BDJ_System
             // 
             this.typeTrainText.BorderColor = System.Drawing.Color.DimGray;
             this.typeTrainText.BorderRadius = 12;
+            this.typeTrainText.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.typeTrainText.DefaultText = "";
             this.typeTrainText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.typeTrainText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -579,6 +624,7 @@ namespace BDJ_System
             // 
             this.trainPlacesText.BorderColor = System.Drawing.Color.DimGray;
             this.trainPlacesText.BorderRadius = 12;
+            this.trainPlacesText.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.trainPlacesText.DefaultText = "";
             this.trainPlacesText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.trainPlacesText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
@@ -648,6 +694,277 @@ namespace BDJ_System
             this.close_btn.TabStop = false;
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(123, 244);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 15);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Минути";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(18, 244);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 15);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Час";
+            // 
+            // guna2NumericUpDown3
+            // 
+            this.guna2NumericUpDown3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2NumericUpDown3.BorderRadius = 12;
+            this.guna2NumericUpDown3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2NumericUpDown3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2NumericUpDown3.Location = new System.Drawing.Point(185, 237);
+            this.guna2NumericUpDown3.Name = "guna2NumericUpDown3";
+            this.guna2NumericUpDown3.Size = new System.Drawing.Size(62, 38);
+            this.guna2NumericUpDown3.TabIndex = 39;
+            // 
+            // guna2NumericUpDown4
+            // 
+            this.guna2NumericUpDown4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2NumericUpDown4.BorderRadius = 12;
+            this.guna2NumericUpDown4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2NumericUpDown4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2NumericUpDown4.Location = new System.Drawing.Point(52, 237);
+            this.guna2NumericUpDown4.Name = "guna2NumericUpDown4";
+            this.guna2NumericUpDown4.Size = new System.Drawing.Size(62, 38);
+            this.guna2NumericUpDown4.TabIndex = 38;
+            // 
+            // guna2DateTimePicker2
+            // 
+            this.guna2DateTimePicker2.BorderRadius = 12;
+            this.guna2DateTimePicker2.Checked = true;
+            this.guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.guna2DateTimePicker2.Location = new System.Drawing.Point(21, 209);
+            this.guna2DateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.guna2DateTimePicker2.Name = "guna2DateTimePicker2";
+            this.guna2DateTimePicker2.Size = new System.Drawing.Size(197, 23);
+            this.guna2DateTimePicker2.TabIndex = 37;
+            this.guna2DateTimePicker2.Value = new System.DateTime(2024, 3, 20, 12, 4, 57, 125);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(18, 184);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(130, 15);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "Крайна дата и час";
+            // 
+            // normalPriceText
+            // 
+            this.normalPriceText.BorderRadius = 12;
+            this.normalPriceText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.normalPriceText.DefaultText = "";
+            this.normalPriceText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.normalPriceText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.normalPriceText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.normalPriceText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.normalPriceText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.normalPriceText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.normalPriceText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.normalPriceText.Location = new System.Drawing.Point(417, 110);
+            this.normalPriceText.Name = "normalPriceText";
+            this.normalPriceText.PasswordChar = '\0';
+            this.normalPriceText.PlaceholderText = "";
+            this.normalPriceText.SelectedText = "";
+            this.normalPriceText.Size = new System.Drawing.Size(54, 31);
+            this.normalPriceText.TabIndex = 42;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(278, 126);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(127, 15);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Цена втора класа";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.Location = new System.Drawing.Point(278, 172);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(127, 15);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Цена първа класа";
+            // 
+            // firstClassText
+            // 
+            this.firstClassText.BorderRadius = 12;
+            this.firstClassText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.firstClassText.DefaultText = "";
+            this.firstClassText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.firstClassText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.firstClassText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.firstClassText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.firstClassText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.firstClassText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.firstClassText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.firstClassText.Location = new System.Drawing.Point(417, 156);
+            this.firstClassText.Name = "firstClassText";
+            this.firstClassText.PasswordChar = '\0';
+            this.firstClassText.PlaceholderText = "";
+            this.firstClassText.SelectedText = "";
+            this.firstClassText.Size = new System.Drawing.Size(54, 31);
+            this.firstClassText.TabIndex = 44;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(278, 218);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(134, 15);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "Цена спален вагон";
+            // 
+            // sleeperClassText
+            // 
+            this.sleeperClassText.BorderRadius = 12;
+            this.sleeperClassText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.sleeperClassText.DefaultText = "";
+            this.sleeperClassText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.sleeperClassText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.sleeperClassText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.sleeperClassText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.sleeperClassText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sleeperClassText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.sleeperClassText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.sleeperClassText.Location = new System.Drawing.Point(417, 208);
+            this.sleeperClassText.Name = "sleeperClassText";
+            this.sleeperClassText.PasswordChar = '\0';
+            this.sleeperClassText.PlaceholderText = "";
+            this.sleeperClassText.SelectedText = "";
+            this.sleeperClassText.Size = new System.Drawing.Size(54, 31);
+            this.sleeperClassText.TabIndex = 46;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(476, 126);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(27, 15);
+            this.label19.TabIndex = 48;
+            this.label19.Text = "лв.";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label20.Location = new System.Drawing.Point(476, 172);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(27, 15);
+            this.label20.TabIndex = 49;
+            this.label20.Text = "лв.";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label21.Location = new System.Drawing.Point(476, 224);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(27, 15);
+            this.label21.TabIndex = 50;
+            this.label21.Text = "лв.";
+            // 
+            // MessageDialogAdmin
+            // 
+            this.MessageDialogAdmin.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.MessageDialogAdmin.Caption = null;
+            this.MessageDialogAdmin.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.MessageDialogAdmin.Parent = null;
+            this.MessageDialogAdmin.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
+            this.MessageDialogAdmin.Text = null;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label22);
+            this.tabPage1.Controls.Add(this.addCityBtn);
+            this.tabPage1.Controls.Add(this.cityNameText);
+            this.tabPage1.Location = new System.Drawing.Point(184, 4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(549, 413);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Градове";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label22.Location = new System.Drawing.Point(14, 18);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(89, 15);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Име на град";
+            // 
+            // addCityBtn
+            // 
+            this.addCityBtn.BorderRadius = 12;
+            this.addCityBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addCityBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addCityBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addCityBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addCityBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.addCityBtn.ForeColor = System.Drawing.Color.White;
+            this.addCityBtn.Location = new System.Drawing.Point(17, 88);
+            this.addCityBtn.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.addCityBtn.Name = "addCityBtn";
+            this.addCityBtn.Size = new System.Drawing.Size(229, 36);
+            this.addCityBtn.TabIndex = 25;
+            this.addCityBtn.Text = "Добави";
+            this.addCityBtn.Click += new System.EventHandler(this.addCityBtn_Click);
+            // 
+            // cityNameText
+            // 
+            this.cityNameText.BorderColor = System.Drawing.Color.DimGray;
+            this.cityNameText.BorderRadius = 12;
+            this.cityNameText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.cityNameText.DefaultText = "";
+            this.cityNameText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.cityNameText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.cityNameText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.cityNameText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.cityNameText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cityNameText.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cityNameText.ForeColor = System.Drawing.Color.Black;
+            this.cityNameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cityNameText.Location = new System.Drawing.Point(17, 43);
+            this.cityNameText.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.cityNameText.Name = "cityNameText";
+            this.cityNameText.PasswordChar = '\0';
+            this.cityNameText.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.cityNameText.PlaceholderText = "Име на града";
+            this.cityNameText.SelectedText = "";
+            this.cityNameText.Size = new System.Drawing.Size(229, 39);
+            this.cityNameText.TabIndex = 24;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -672,6 +989,10 @@ namespace BDJ_System
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.close_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown4)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -714,5 +1035,25 @@ namespace BDJ_System
         private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown1;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown3;
+        private Guna.UI2.WinForms.Guna2NumericUpDown guna2NumericUpDown4;
+        private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private Guna.UI2.WinForms.Guna2TextBox sleeperClassText;
+        private System.Windows.Forms.Label label17;
+        private Guna.UI2.WinForms.Guna2TextBox firstClassText;
+        private System.Windows.Forms.Label label16;
+        private Guna.UI2.WinForms.Guna2TextBox normalPriceText;
+        private Guna.UI2.WinForms.Guna2MessageDialog MessageDialogAdmin;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label label22;
+        private Guna.UI2.WinForms.Guna2Button addCityBtn;
+        private Guna.UI2.WinForms.Guna2TextBox cityNameText;
     }
 }

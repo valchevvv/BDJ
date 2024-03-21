@@ -40,6 +40,20 @@ namespace BDJ_System
             bdj.SaveChanges();
         }
 
+        public static void AddRoute(Route route)
+        {
+            BDJEntity bdj = getContext();
+            bdj.Routes.Add(route);
+            bdj.SaveChanges();
+        }
+
+        public static void AddCity(City city)
+        {
+            BDJEntity bdj = getContext();
+            bdj.Cities.Add(city);
+            bdj.SaveChanges();
+        }
+
         public static void EditUser(int id, string uname, string name, string pass, bool isAdmin)
         {
             BDJEntity bdj = getContext();
@@ -54,6 +68,11 @@ namespace BDJ_System
         public static User GetUserById(int id)
         {
             return GetUsers().Find(x => x.id == id);
+        }
+
+        public static Train GetTrainById(int id)
+        {
+            return GetTrains().Find(x=>x.id == id);
         }
 
         public static List<City> GetCities()
