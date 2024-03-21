@@ -209,7 +209,7 @@ namespace BDJ_System
             if(isEmpty(sleeperClassText.Text)) { newRoute.sleeper_class= null; } 
             else { newRoute.sleeper_class = decimal.Parse(sleeperClassText.Text); }
 
-            //Database.AddRoute(newRoute);
+            Database.AddRoute(newRoute);
             ClearDataRoutes();
 
         }
