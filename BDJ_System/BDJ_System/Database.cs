@@ -61,7 +61,6 @@ namespace BDJ_System
             bdj.SaveChanges();
         }
 
-        public 
 
         public static void AddCity(City city)
         {

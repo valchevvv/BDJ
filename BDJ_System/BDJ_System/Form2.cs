@@ -224,7 +224,7 @@ namespace BDJ_System
 
             for (int i = 0; i < cities.Count; i++)
             {
-                Database.AddStopToRoute(index, cities[i].id, i + 1, new DateTime());
+                Database.AddStopToRoute(index, cities[i].id, i + 1,  DateTime.Now);
             }
 
             ClearDataRoutes();
@@ -275,8 +275,8 @@ namespace BDJ_System
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             if (routeStopsComboBox.SelectedIndex == -1) return;
-            int index = (routeStopsComboBox.SelectedItem.ToString().Split(')')[0]);
-            City city = Database.GetCities().Find(x => x.id = index);
+            int index = int.Parse(routeStopsComboBox.SelectedItem.ToString().Split(')')[0]);
+            City city = Database.GetCities().Find(x => x.id == index);
             listBox1.Items.Add($"{listBox1.Items.Count + 1}) {city.name}");
             cities.Add(city);
         }
