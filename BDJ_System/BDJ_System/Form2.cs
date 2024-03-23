@@ -228,6 +228,8 @@ namespace BDJ_System
             }
 
             ClearDataRoutes();
+            listBox1.Items.Clear();
+            cities.Clear();
 
         }
 
@@ -279,6 +281,8 @@ namespace BDJ_System
             City city = Database.GetCities().Find(x => x.id == index);
             listBox1.Items.Add($"{listBox1.Items.Count + 1}) {city.name}");
             cities.Add(city);
+
+            routeStopsComboBox.SelectedIndex = -1;
         }
     }
 }

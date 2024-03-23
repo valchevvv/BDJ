@@ -89,6 +89,7 @@ namespace BDJ_System
             this.label1 = new System.Windows.Forms.Label();
             this.close_btn = new System.Windows.Forms.PictureBox();
             this.MessageDialogAdmin = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabs.SuspendLayout();
             this.users.SuspendLayout();
             this.routes.SuspendLayout();
@@ -394,6 +395,7 @@ namespace BDJ_System
             // 
             // routes
             // 
+            this.routes.Controls.Add(this.label23);
             this.routes.Controls.Add(this.guna2Button3);
             this.routes.Controls.Add(this.routeStopsComboBox);
             this.routes.Controls.Add(this.listBox1);
@@ -439,7 +441,7 @@ namespace BDJ_System
             this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(297, 317);
+            this.guna2Button3.Location = new System.Drawing.Point(40, 313);
             this.guna2Button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(175, 30);
@@ -458,7 +460,7 @@ namespace BDJ_System
             this.routeStopsComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.routeStopsComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.routeStopsComboBox.ItemHeight = 30;
-            this.routeStopsComboBox.Location = new System.Drawing.Point(296, 196);
+            this.routeStopsComboBox.Location = new System.Drawing.Point(34, 117);
             this.routeStopsComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.routeStopsComboBox.Name = "routeStopsComboBox";
             this.routeStopsComboBox.Size = new System.Drawing.Size(176, 36);
@@ -467,17 +469,17 @@ namespace BDJ_System
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(297, 244);
+            this.listBox1.Location = new System.Drawing.Point(35, 170);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(175, 69);
+            this.listBox1.Size = new System.Drawing.Size(175, 134);
             this.listBox1.TabIndex = 51;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(465, 153);
+            this.label21.Location = new System.Drawing.Point(466, 306);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(27, 15);
@@ -488,7 +490,7 @@ namespace BDJ_System
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(465, 101);
+            this.label20.Location = new System.Drawing.Point(466, 268);
             this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(27, 15);
@@ -499,7 +501,7 @@ namespace BDJ_System
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(465, 54);
+            this.label19.Location = new System.Drawing.Point(466, 221);
             this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(27, 15);
@@ -510,7 +512,7 @@ namespace BDJ_System
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(267, 146);
+            this.label18.Location = new System.Drawing.Point(268, 306);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(134, 15);
@@ -529,7 +531,7 @@ namespace BDJ_System
             this.sleeperClassText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.sleeperClassText.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.sleeperClassText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.sleeperClassText.Location = new System.Drawing.Point(406, 136);
+            this.sleeperClassText.Location = new System.Drawing.Point(407, 290);
             this.sleeperClassText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.sleeperClassText.Name = "sleeperClassText";
             this.sleeperClassText.PasswordChar = '\0';
@@ -542,7 +544,7 @@ namespace BDJ_System
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(267, 101);
+            this.label17.Location = new System.Drawing.Point(268, 268);
             this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(127, 15);
@@ -561,7 +563,7 @@ namespace BDJ_System
             this.firstClassText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.firstClassText.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.firstClassText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.firstClassText.Location = new System.Drawing.Point(406, 84);
+            this.firstClassText.Location = new System.Drawing.Point(407, 251);
             this.firstClassText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.firstClassText.Name = "firstClassText";
             this.firstClassText.PasswordChar = '\0';
@@ -574,7 +576,7 @@ namespace BDJ_System
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(267, 54);
+            this.label16.Location = new System.Drawing.Point(268, 221);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(127, 15);
@@ -593,7 +595,7 @@ namespace BDJ_System
             this.normalPriceText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.normalPriceText.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.normalPriceText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.normalPriceText.Location = new System.Drawing.Point(406, 38);
+            this.normalPriceText.Location = new System.Drawing.Point(407, 205);
             this.normalPriceText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.normalPriceText.Name = "normalPriceText";
             this.normalPriceText.PasswordChar = '\0';
@@ -606,7 +608,7 @@ namespace BDJ_System
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(123, 244);
+            this.label13.Location = new System.Drawing.Point(380, 167);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(57, 15);
@@ -617,7 +619,7 @@ namespace BDJ_System
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(18, 244);
+            this.label14.Location = new System.Drawing.Point(275, 167);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 15);
@@ -630,10 +632,10 @@ namespace BDJ_System
             this.guna2NumericUpDown3.BorderRadius = 12;
             this.guna2NumericUpDown3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2NumericUpDown3.Location = new System.Drawing.Point(185, 237);
+            this.guna2NumericUpDown3.Location = new System.Drawing.Point(442, 161);
             this.guna2NumericUpDown3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2NumericUpDown3.Name = "guna2NumericUpDown3";
-            this.guna2NumericUpDown3.Size = new System.Drawing.Size(62, 38);
+            this.guna2NumericUpDown3.Size = new System.Drawing.Size(62, 31);
             this.guna2NumericUpDown3.TabIndex = 39;
             // 
             // guna2NumericUpDown4
@@ -642,10 +644,10 @@ namespace BDJ_System
             this.guna2NumericUpDown4.BorderRadius = 12;
             this.guna2NumericUpDown4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2NumericUpDown4.Location = new System.Drawing.Point(52, 237);
+            this.guna2NumericUpDown4.Location = new System.Drawing.Point(309, 161);
             this.guna2NumericUpDown4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2NumericUpDown4.Name = "guna2NumericUpDown4";
-            this.guna2NumericUpDown4.Size = new System.Drawing.Size(62, 38);
+            this.guna2NumericUpDown4.Size = new System.Drawing.Size(62, 31);
             this.guna2NumericUpDown4.TabIndex = 38;
             // 
             // guna2DateTimePicker2
@@ -653,9 +655,10 @@ namespace BDJ_System
             this.guna2DateTimePicker2.BorderRadius = 12;
             this.guna2DateTimePicker2.Checked = true;
             this.guna2DateTimePicker2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DateTimePicker2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2DateTimePicker2.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker2.Location = new System.Drawing.Point(21, 209);
+            this.guna2DateTimePicker2.Location = new System.Drawing.Point(278, 132);
             this.guna2DateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2DateTimePicker2.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker2.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -668,7 +671,7 @@ namespace BDJ_System
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(18, 184);
+            this.label15.Location = new System.Drawing.Point(275, 107);
             this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(130, 15);
@@ -679,7 +682,7 @@ namespace BDJ_System
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(123, 139);
+            this.label12.Location = new System.Drawing.Point(380, 72);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 15);
@@ -690,7 +693,7 @@ namespace BDJ_System
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(18, 139);
+            this.label11.Location = new System.Drawing.Point(275, 72);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 15);
@@ -703,10 +706,10 @@ namespace BDJ_System
             this.guna2NumericUpDown2.BorderRadius = 12;
             this.guna2NumericUpDown2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2NumericUpDown2.Location = new System.Drawing.Point(185, 132);
+            this.guna2NumericUpDown2.Location = new System.Drawing.Point(442, 65);
             this.guna2NumericUpDown2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2NumericUpDown2.Name = "guna2NumericUpDown2";
-            this.guna2NumericUpDown2.Size = new System.Drawing.Size(62, 38);
+            this.guna2NumericUpDown2.Size = new System.Drawing.Size(62, 31);
             this.guna2NumericUpDown2.TabIndex = 33;
             // 
             // guna2NumericUpDown1
@@ -715,10 +718,10 @@ namespace BDJ_System
             this.guna2NumericUpDown1.BorderRadius = 12;
             this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.guna2NumericUpDown1.Location = new System.Drawing.Point(52, 132);
+            this.guna2NumericUpDown1.Location = new System.Drawing.Point(309, 65);
             this.guna2NumericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
-            this.guna2NumericUpDown1.Size = new System.Drawing.Size(62, 38);
+            this.guna2NumericUpDown1.Size = new System.Drawing.Size(62, 31);
             this.guna2NumericUpDown1.TabIndex = 31;
             // 
             // guna2DateTimePicker1
@@ -726,9 +729,10 @@ namespace BDJ_System
             this.guna2DateTimePicker1.BorderRadius = 12;
             this.guna2DateTimePicker1.Checked = true;
             this.guna2DateTimePicker1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DateTimePicker1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.guna2DateTimePicker1.ForeColor = System.Drawing.Color.White;
             this.guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.guna2DateTimePicker1.Location = new System.Drawing.Point(21, 104);
+            this.guna2DateTimePicker1.Location = new System.Drawing.Point(278, 37);
             this.guna2DateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2DateTimePicker1.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.guna2DateTimePicker1.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -741,7 +745,7 @@ namespace BDJ_System
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(18, 79);
+            this.label7.Location = new System.Drawing.Point(275, 12);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 15);
@@ -769,7 +773,7 @@ namespace BDJ_System
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(18, 21);
+            this.label9.Location = new System.Drawing.Point(64, 12);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 15);
@@ -1009,6 +1013,17 @@ namespace BDJ_System
             this.MessageDialogAdmin.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
             this.MessageDialogAdmin.Text = null;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label23.Location = new System.Drawing.Point(37, 88);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(154, 15);
+            this.label23.TabIndex = 54;
+            this.label23.Text = "Спирки към маршрута";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1101,5 +1116,6 @@ namespace BDJ_System
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2ComboBox routeStopsComboBox;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label23;
     }
 }
