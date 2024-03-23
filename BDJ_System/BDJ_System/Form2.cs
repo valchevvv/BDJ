@@ -47,6 +47,12 @@ namespace BDJ_System
             Database.GetTrains().ForEach(x => trainComboBox.Items.Add($"{x.id}) {x.type}"));
         }
 
+        private void loadRoutes()
+        {
+            routeStopsComboBox.Items.Clear();
+            Database.GetCities().ForEach(x => routeStopsComboBox.Items.Add($"{x.id}) {x.name}"));
+        }
+
         private void tabs_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -57,6 +63,10 @@ namespace BDJ_System
             else if (tabs.SelectedTab.Name == "trains")
             {
                 loadTrains();
+            }
+            else if(tabs.SelectedTab.Name == "routes")
+            {
+                loadRoutes();
             }
         }
 
@@ -251,6 +261,15 @@ namespace BDJ_System
             bool contains = false;
             foreach (City city in cities) { if (city.name == name) { contains = true; } }
             return contains;
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            if (routeStopsComboBox.SelectedIndex == -1) return;
+            int index = (routeStopsComboBox.SelectedItem.ToString().Split(')')[0]);
+            City city = Database.GetCities().Find(x => x.id = index);
+            listBox1.Items.Add($"{listBox1.Items.Count + 1}) {city.name}");
+
         }
     }
 }
