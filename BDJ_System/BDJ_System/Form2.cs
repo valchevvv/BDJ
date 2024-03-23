@@ -49,6 +49,7 @@ namespace BDJ_System
 
         private void loadRoutes()
         {
+            cities.Clear();
             routeStopsComboBox.Items.Clear();
             Database.GetCities().ForEach(x => routeStopsComboBox.Items.Add($"{x.id}) {x.name}"));
         }
@@ -219,7 +220,13 @@ namespace BDJ_System
             if(isEmpty(sleeperClassText.Text)) { newRoute.sleeper_class= null; } 
             else { newRoute.sleeper_class = decimal.Parse(sleeperClassText.Text); }
 
-            Database.AddRoute(newRoute);
+            int index = Database.AddRoute(newRoute);
+
+            for (int i = 0; i < cities.Count; i++)
+            {
+                Database.AddStopToRoute(index, cities[i].id, i + 1, new DateTime());
+            }
+
             ClearDataRoutes();
 
         }
@@ -263,13 +270,15 @@ namespace BDJ_System
             return contains;
         }
 
+        List<City> cities = new List<City>();
+
         private void guna2Button3_Click(object sender, EventArgs e)
         {
             if (routeStopsComboBox.SelectedIndex == -1) return;
             int index = (routeStopsComboBox.SelectedItem.ToString().Split(')')[0]);
             City city = Database.GetCities().Find(x => x.id = index);
             listBox1.Items.Add($"{listBox1.Items.Count + 1}) {city.name}");
-
+            cities.Add(city);
         }
     }
 }

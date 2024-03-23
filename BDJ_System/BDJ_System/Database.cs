@@ -40,12 +40,28 @@ namespace BDJ_System
             bdj.SaveChanges();
         }
 
-        public static void AddRoute(Route route)
+        public static int AddRoute(Route route)
         {
             BDJEntity bdj = getContext();
             bdj.Routes.Add(route);
             bdj.SaveChanges();
+
+            return bdj.Routes.ToList().Find(x => x == route).id;
         }
+
+        public static void AddStopToRoute(int route, int city, int number, DateTime dateTime)
+        {
+            BDJEntity bdj = getContext();
+            Route_Stops stop = new Route_Stops();
+            stop.route = route;
+            stop.city = city;
+            stop.number = number;
+            stop.arrival = dateTime;
+            bdj.Route_Stops.Add(stop);
+            bdj.SaveChanges();
+        }
+
+        public 
 
         public static void AddCity(City city)
         {
