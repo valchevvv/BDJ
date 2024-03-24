@@ -38,6 +38,7 @@ namespace BDJ_System
 
         private void loadUsers()
         {
+            usersComboBox.Items.Clear();
             Database.GetUsers().ForEach(x => usersComboBox.Items.Add($"{x.id}) {x.name}"));
         }
 
