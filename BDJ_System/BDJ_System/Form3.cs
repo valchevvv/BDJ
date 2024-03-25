@@ -93,8 +93,6 @@ namespace BDJ_System
                 string board = Database.GetCityById((int)reservation.board).name;
                 string arrive = Database.GetCityById((int)reservation.arrive).name;
 
-                MessageBox.Show($"{board} -> {arrive}");
-
                 int board_number = (int)Database.GetRoute_Stop((int)reservation.board).number;
                 int arrive_number = (int)Database.GetRoute_Stop((int)reservation.arrive).number;
                 int route_stops_count = Math.Abs(arrive_number - board_number);
