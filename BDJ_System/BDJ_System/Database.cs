@@ -154,7 +154,7 @@ namespace BDJ_System
 
         public static Route_Stops GetRoute_Stop(int id)
         {
-            return getContext().Route_Stops.ToList().Find(x => x.id == id);
+            return getContext().Route_Stops.ToList().Find(x => x.city == id);
         }
 
         public static void MakeReservation(int passenger, int route, int board, int arrive)

@@ -55,7 +55,7 @@ namespace BDJ_System
                 int last_stop = (int)Database.LastRouteStop((int)route.id).city;
 
                 string from = Database.GetCityById(first_stop).name;
-                string to = Database.GetCityById(first_stop).name;
+                string to = Database.GetCityById(last_stop).name;
 
                 routeComboBox.Items.Add($"{route.id}) {from} -> {to}");
             }
@@ -65,8 +65,8 @@ namespace BDJ_System
         {
             if (routeComboBox.SelectedIndex == -1) return;
             Route route = Database.GetRoutes().Find(x=>x.id == int.Parse(routeComboBox.SelectedItem.ToString().Split(')')[0]));
-            int board = (int)Database.GetRoute_Stop(int.Parse(boardComboBox.SelectedItem.ToString().Split(')')[0])).id;
-            int arrive = (int)Database.GetRoute_Stop(int.Parse(arriveComboBox.SelectedItem.ToString().Split(')')[0])).id;
+            int board = (int)Database.GetRoute_Stop(int.Parse(boardComboBox.SelectedItem.ToString().Split(')')[0])).city;
+            int arrive = (int)Database.GetRoute_Stop(int.Parse(arriveComboBox.SelectedItem.ToString().Split(')')[0])).city;
             Database.MakeReservation(saved_login.id, route.id, board, arrive);
             routeComboBox.SelectedIndex = -1;
             boardComboBox.SelectedIndex = -1;
@@ -87,11 +87,13 @@ namespace BDJ_System
             dataGridView.Rows.Clear();
             foreach (Reservation reservation in Database.GetReservationsByUser(saved_login.id))
             {
-                string route = Database.GetCityById((int)Database.FirstAndLastRouteStop((int)reservation.route)[0].city).name;
-                route += $" - {Database.GetCityById((int)Database.FirstAndLastRouteStop((int)reservation.route)[1].city).name}";
+                string route = Database.GetCityById((int)Database.FirstRouteStop((int)reservation.route).city).name;
+                route += $" - {Database.GetCityById((int)Database.LastRouteStop((int)reservation.route).city).name}";
 
                 string board = Database.GetCityById((int)reservation.board).name;
                 string arrive = Database.GetCityById((int)reservation.arrive).name;
+
+                MessageBox.Show($"{board} -> {arrive}");
 
                 int board_number = (int)Database.GetRoute_Stop((int)reservation.board).number;
                 int arrive_number = (int)Database.GetRoute_Stop((int)reservation.arrive).number;
@@ -113,13 +115,13 @@ namespace BDJ_System
             boardComboBox.Items.Clear();
             List<Route_Stops> stops = Database.GetRoute_Stops(route.id);
             stops.RemoveAt(stops.Count - 1);
-            stops.ForEach(x => boardComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)x.city).name}"));
+            stops.ForEach(x => boardComboBox.Items.Add($"{x.city}) {Database.GetCityById((int)x.city).name}"));
             boardComboBox.SelectedIndex = 0;
             arriveComboBox.Items.Clear();
 
             List<Route_Stops> arriveStops = Database.GetRoute_Stops(route.id).ToList();
             arriveStops.RemoveAt(0);
-            arriveStops.ForEach(x => arriveComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)x.city).name}"));
+            arriveStops.ForEach(x => arriveComboBox.Items.Add($"{x.city}) {Database.GetCityById((int)x.city).name}"));
             arriveComboBox.SelectedIndex = arriveComboBox.Items.Count - 1;
         }
 
@@ -128,11 +130,11 @@ namespace BDJ_System
             arriveComboBox.Enabled = boardComboBox.SelectedIndex != -1;
             if (boardComboBox.SelectedIndex == -1) return;
             Route route = Database.GetRoutes().Find(x => x.id == int.Parse(routeComboBox.SelectedItem.ToString().Split(')')[0]));
-            int boardNumber = (int)Database.GetRoute_Stops(route.id).Find(x => x.id == int.Parse(boardComboBox.SelectedItem.ToString().Split(')')[0])).number;
+            int boardNumber = (int)Database.GetRoute_Stops(route.id).Find(x => x.city == int.Parse(boardComboBox.SelectedItem.ToString().Split(')')[0])).number;
             arriveComboBox.Items.Clear();
-            Database.GetRoute_Stops(route.id).Where(x => x.number > boardNumber).ToList().ForEach(x => arriveComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)x.city).name}"));
-            Route_Stops last = Database.FirstAndLastRouteStop(route.id)[1];
-            arriveComboBox.SelectedItem = $"{last.id}) {Database.GetCityById((int)last.city).name}";
+            Database.GetRoute_Stops(route.id).Where(x => x.number > boardNumber).ToList().ForEach(x => arriveComboBox.Items.Add($"{x.city}) {Database.GetCityById((int)x.city).name}"));
+            Route_Stops last = Database.LastRouteStop(route.id);
+            arriveComboBox.SelectedItem = $"{last.city}) {Database.GetCityById((int)last.city).name}";
         }
 
         private void Form3_Load(object sender, EventArgs e)
