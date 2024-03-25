@@ -47,7 +47,18 @@ namespace BDJ_System
         private void loadRoutes()
         {
             routeComboBox.Items.Clear();
-            Database.GetRoutes().ForEach(x => routeComboBox.Items.Add($"{x.id}) {Database.GetCityById((int)Database.FirstAndLastRouteStop(x.id)[0].city).name} - {Database.GetCityById((int)Database.FirstAndLastRouteStop(x.id)[1].city).name}"));
+            foreach(Route route in Database.GetRoutes())
+            {
+                if (!Database.RouteHasStops(route.id)) continue;
+
+                int first_stop = (int)Database.FirstRouteStop((int)route.id).city;
+                int last_stop = (int)Database.LastRouteStop((int)route.id).city;
+
+                string from = Database.GetCityById(first_stop).name;
+                string to = Database.GetCityById(first_stop).name;
+
+                routeComboBox.Items.Add($"{route.id}) {from} -> {to}");
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

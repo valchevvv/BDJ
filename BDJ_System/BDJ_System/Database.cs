@@ -128,6 +128,25 @@ namespace BDJ_System
             return first_last;
         }
 
+        public static Route_Stops FirstRouteStop(int route_id)
+        {
+            Route_Stops[] stops = GetRoute_Stops(route_id).ToArray();
+            if (stops.Length <= 0) { return null; }
+            return stops[0];
+        }
+
+        public static bool RouteHasStops(int route_id)
+        {
+            return GetRoute_Stops(route_id).Count() > 0;
+        }
+
+        public static Route_Stops LastRouteStop(int route_id)
+        {
+            Route_Stops[] stops = GetRoute_Stops(route_id).ToArray();
+            if (stops.Length <= 0) { return null; }
+            return stops[stops.Length - 1];
+        }
+
         public static City GetCityById(int id)
         {
             return getContext().Cities.ToList().Find(x => x.id == id);
