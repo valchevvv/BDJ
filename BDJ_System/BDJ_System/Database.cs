@@ -49,6 +49,36 @@ namespace BDJ_System
             return bdj.Routes.ToList().Find(x => x == route).id;
         }
 
+        public static void DeleteRoute(Route route)
+        {
+            BDJEntity context = getContext();
+            List<Reservation> reservations = context.Reservations.Where(reservation => reservation.route == route.id).ToList();
+            foreach (Reservation reservation in reservations)
+            {
+                context.Reservations.Remove(reservation);
+            }
+            context.SaveChanges();
+            List<Route_Stops> route_Stops = context.Route_Stops.Where(stop => stop.route == route.id).ToList();
+            foreach(Route_Stops stop in route_Stops)
+            {
+                context.Route_Stops.Remove(stop);
+            }
+            context.SaveChanges();
+            context.Routes.Remove(context.Routes.ToList().Find(route1 => route1.id == route.id));
+            context.SaveChanges();
+        }
+
+        public static string RouteText(Route route)
+        {
+            Route_Stops fstop = Database.FirstRouteStop((int)route.id);
+            Route_Stops lstop = Database.LastRouteStop((int)route.id);
+            if (fstop == null && lstop == null) return String.Empty;
+            string first = Database.GetCityById((int)fstop.city).name;
+            string last = Database.GetCityById((int)lstop.city).name;
+
+            return $"{first} - {last}";
+        }
+
         public static void AddStopToRoute(int route, int city, int number, DateTime dateTime)
         {
             BDJEntity bdj = getContext();

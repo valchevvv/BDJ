@@ -1,7 +1,9 @@
 ﻿using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -201,7 +203,7 @@ namespace BDJ_System
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-           
+            if(cities.Count <= 0) { MessageDialogAdmin.Show("Добавете спирки по маршрута!", "Грешка"); return; }
             if (trainComboBox.SelectedIndex == -1) { MessageDialogAdmin.Show("Не е избран влак!", "Грешка"); return; }
             if (isEmpty(normalPriceText.Text)) { MessageDialogAdmin.Show("Въвеждането на основна цена е задължително!", "Грешка"); return; }
             
@@ -296,42 +298,37 @@ namespace BDJ_System
 
         }
 
-        private void loadRoutesTable()
-        {
-            guna2DataGridView1.Rows.Clear();
-
-            Database.GetRoutes().ForEach(route => AddToTable(route));
-        }
-
-        private void AddToTable(Route route)
-        {
-            Route_Stops first = Database.FirstRouteStop(route.id), last = Database.LastRouteStop(route.id);
-            if (first == null || last == null) return;
-            City firstc = Database.GetCityById((int)first.city), lastc = Database.GetCityById((int)last.city);
-            if (firstc == null || lastc == null) return;
-            string[] strings =
-            {
-                route.id.ToString(),
-                firstc.name,
-                lastc.name,
-                $"{route.start_date} - {route.end_date}",
-                "Изтрий"
-            };
-            guna2DataGridView1.Rows.Add(strings);
-        }
-
         private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (guna2TabControl1.SelectedIndex == 1) loadRoutesTable();
+            if (guna2TabControl1.SelectedIndex == 1) {
+                guna2ComboBox2.Items.Clear();
+                Database.GetRoutes().Where(route => String.IsNullOrWhiteSpace(Database.RouteText(route)) == false).ToList().ForEach(route => guna2ComboBox2.Items.Add($"{route.id}) {Database.RouteText(route)}"));
+            }
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void guna2Button2_Click_1(object sender, EventArgs e)
         {
-            if (guna2DataGridView1.SelectedCells.Count < 0) return;
-            if (guna2DataGridView1.SelectedCells[0].ColumnIndex != 3) return;
-            int row = guna2DataGridView1.SelectedCells[0].RowIndex;
-            string number = guna2DataGridView1.Rows[row].Cells[0].Value.ToString();
-            MessageBox.Show(number);
+
+        }
+
+        private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = int.Parse(guna2ComboBox2.SelectedItem.ToString().Split(')')[0]);
+            Route route = Database.GetRoute(id);
+            Route_Stops[] stops = Database.GetRoute_Stops(id).ToArray();
+            listBox2.Items.Clear();
+            for (int i = 0; i < stops.Length - 1; i++)
+            {
+                listBox2.Items.Add($"{Database.GetCityById((int)stops[i].city).name} -> {Database.GetCityById((int)stops[i + 1].city).name}");
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(guna2ComboBox2.SelectedItem.ToString().Split(')')[0]);
+            Database.DeleteRoute(Database.GetRoute(id));
+            guna2ComboBox2.SelectedIndex = -1;
+            listBox2.Items.Clear();
         }
     }
 }
