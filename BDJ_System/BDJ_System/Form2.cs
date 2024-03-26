@@ -285,5 +285,53 @@ namespace BDJ_System
 
             routeStopsComboBox.SelectedIndex = -1;
         }
+
+        private void route_add_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadRoutesTable()
+        {
+            guna2DataGridView1.Rows.Clear();
+
+            Database.GetRoutes().ForEach(route => AddToTable(route));
+        }
+
+        private void AddToTable(Route route)
+        {
+            Route_Stops first = Database.FirstRouteStop(route.id), last = Database.LastRouteStop(route.id);
+            if (first == null || last == null) return;
+            City firstc = Database.GetCityById((int)first.city), lastc = Database.GetCityById((int)last.city);
+            if (firstc == null || lastc == null) return;
+            string[] strings =
+            {
+                route.id.ToString(),
+                firstc.name,
+                lastc.name,
+                $"{route.start_date} - {route.end_date}",
+                "Изтрий"
+            };
+            guna2DataGridView1.Rows.Add(strings);
+        }
+
+        private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (guna2TabControl1.SelectedIndex == 1) loadRoutesTable();
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (guna2DataGridView1.SelectedCells.Count < 0) return;
+            if (guna2DataGridView1.SelectedCells[0].ColumnIndex != 3) return;
+            int row = guna2DataGridView1.SelectedCells[0].RowIndex;
+            string number = guna2DataGridView1.Rows[row].Cells[0].Value.ToString();
+            MessageBox.Show(number);
+        }
     }
 }
