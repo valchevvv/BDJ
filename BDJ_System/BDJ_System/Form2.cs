@@ -330,5 +330,18 @@ namespace BDJ_System
             guna2ComboBox2.SelectedIndex = -1;
             listBox2.Items.Clear();
         }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.FormClosed += new FormClosedEventHandler(Form2_FormClosed);
+            form.Show();
+            this.Hide();
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

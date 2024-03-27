@@ -150,5 +150,18 @@ namespace BDJ_System
             decimal price = (decimal)route.normal_price * (int)route_stops_count;
             price_lbl.Text = $"Цена: {price:c}";
         }
+
+        private void logout_btn_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.FormClosed += new FormClosedEventHandler(Form3_FormClosed);
+            form.Show();
+            this.Hide();
+        }
+
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
